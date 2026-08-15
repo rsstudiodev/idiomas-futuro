@@ -1,6 +1,5 @@
 ---
 const waHref = "https://wa.me/523311223344?text=%C2%A1Hola!%20Quiero%20reservar%20un%20lugar%20en%20Idiomas%20del%20Futuro";
-const base = import.meta.env.BASE_URL;
 
 const navLinks = [
 	{ href: `/idiomas-futuro/calendarios`, label: "Próximos inicios" },
@@ -13,7 +12,7 @@ const navLinks = [
 
 <nav class="fixed top-0 left-0 z-100 w-full border-b border-idf-navy/10 bg-idf-cream/82 backdrop-blur-2xl">
 	<div class="mx-auto flex h-20 w-full max-w-6xl items-center justify-between gap-4 px-6 max-[520px]:h-17 max-[520px]:px-4">
-		<a href={base} class="flex shrink-0 items-center gap-3 no-underline" title="Idiomas del Futuro">
+		<a href={'/idiomas-futuro'} class="flex shrink-0 items-center gap-3 no-underline" title="Idiomas del Futuro">
 			<div class="relative flex h-8.5 w-8.5 shrink-0 items-center justify-center rounded-[11px] bg-idf-navy">
 				<span class="block h-3.5 w-3.5 rounded-full border-2 border-idf-cream"></span>
 				<span class="absolute top-1.5 right-1.5 h-1.75 w-1.75 rotate-45 bg-idf-amber"></span>
