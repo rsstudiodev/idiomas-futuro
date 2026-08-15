@@ -1,15 +1,16 @@
 ---
+const base = import.meta.env.BASE_URL;
 const courseLinks = [
-	{ href: "/calendarios#ingles", label: "Inglés" },
-	{ href: "/calendarios#portugues", label: "Portugués" },
-	{ href: "/calendarios#chino", label: "Chino mandarín" },
-	{ href: "/#servicios", label: "Cursos corporativos" },
+	{ href: `${base}calendarios#ingles`, label: "Inglés" },
+	{ href: `${base}calendarios#portugues`, label: "Portugués" },
+	{ href: `${base}calendarios#chino`, label: "Chino mandarín" },
+	{ href: `${base}#servicios`, label: "Cursos corporativos" },
 ];
 const exploreLinks = [
-	{ href: "/calendarios", label: "Próximos inicios" },
-	{ href: "/profesores", label: "Profesores" },
-	{ href: "/metodo", label: "Nuestro método" },
-	{ href: "/#ubicacion", label: "Ubicación" },
+	{ href: `${base}calendarios`, label: "Próximos inicios" },
+	{ href: `${base}profesores`, label: "Profesores" },
+	{ href: `${base}metodo`, label: "Nuestro método" },
+	{ href: `${base}#ubicacion`, label: "Ubicación" },
 ];
 ---
 
@@ -45,7 +46,7 @@ const exploreLinks = [
 		</div>
 		<div class="flex flex-col gap-4">
 			<h3 class="m-0 font-display text-[11px] font-semibold tracking-[0.16em] text-idf-navy/50 uppercase">Síguenos</h3>
-			<a href="/#instagram" class="font-sans text-[13px] text-idf-ink/70 no-underline hover:text-idf-navy">@idiomasdelfuturo</a>
+			<a href={`${base}#instagram`} class="font-sans text-[13px] text-idf-ink/70 no-underline hover:text-idf-navy">@idiomasdelfuturo</a>
 			<span class="font-sans text-[13px] text-idf-ink/45">Lun a Sáb · 7:00 – 21:00</span>
 		</div>
 	</div>

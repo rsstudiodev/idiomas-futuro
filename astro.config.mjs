@@ -14,10 +14,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  /*
-  site: 'https://ricsasa.work',
-  base: '',
-  */
+  site: 'https://rsstudiodev.github.io',
+  base: '/idiomas-futuro/',
   integrations: [react(), sitemap(), partytown(),
 
   reactI18next({

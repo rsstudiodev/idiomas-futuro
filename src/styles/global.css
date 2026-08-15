@@ -27,6 +27,15 @@
 	}
 }
 
+html.idf-hero-seen .hero-motion {
+	animation: none !important;
+	opacity: 1 !important;
+}
+
+html.idf-hero-seen #hero-logo-fly {
+	display: none !important;
+}
+
 @keyframes idf-hero-logo-intro {
 	0% {
 		opacity: 0;
