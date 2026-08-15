@@ -1,0 +1,121 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import SiteHeader from "@/components/SiteHeader.astro";
+import SiteFooter from "@/components/SiteFooter.astro";
+import WhatsAppFab from "@/components/WhatsAppFab.astro";
+import { buildStaticPaths } from "astro-react-i18next/utils";
+
+export function getStaticPaths() {
+	return buildStaticPaths();
+}
+
+const stats = [
+	{ value: "70%", desc: "del tiempo de clase lo pasas hablando o escribiendo tú, no escuchando al profesor." },
+	{ value: "8", desc: "personas como máximo por grupo, para que cada quien tenga turno en cada actividad." },
+	{ value: "4", desc: "reportes de avance al año, con grabaciones tuyas del primer y del último día." },
+];
+
+const timeline = [
+	{ time: "0–15 min", title: "Arranque hablado", desc: "En parejas, sobre algo que te pasó esta semana. Nadie abre el libro todavía y nadie corrige aún." },
+	{ time: "15–40 min", title: "Entrada de contexto", desc: "Un audio, un video corto o un texto real: una nota de prensa, un menú, un chat de trabajo. Primero entiendes, después analizas." },
+	{ time: "40–60 min", title: "La regla, cuando ya la necesitas", desc: "Veinte minutos de gramática explicada sobre los ejemplos que acabas de escuchar, no sobre frases inventadas." },
+	{ time: "60–100 min", title: "Tarea con resultado", desc: "Negociar una renta, resolver una queja, presentar tu proyecto. Se hace en equipo y se presenta frente al grupo." },
+	{ time: "100–120 min", title: "Corrección amable", desc: "El profesor devuelve los errores más útiles del día, anónimos y en el pizarrón. Te vas con tres cosas concretas que mejorar." },
+];
+
+const notDone = [
+	"Material digital incluido, sin comprar libros aparte",
+	"Puedes reponer una clase perdida con otro grupo del mismo nivel",
+	"Certificación interna al terminar cada nivel",
+];
+---
+
+<Layout title="Nuestro método — Idiomas del Futuro">
+	<div class="w-full overflow-x-hidden bg-idf-cream text-idf-ink">
+		<SiteHeader />
+
+		<section class="relative flex w-full flex-col items-center overflow-hidden px-6 pt-[200px] pb-24 text-center max-[640px]:pt-[130px]">
+			<div class="absolute inset-0 bg-[radial-gradient(110%_80%_at_50%_-20%,#c5d8f0_0%,#dfe9f4_34%,#f1efe6_64%,#faf6ec_88%)]"></div>
+			<div class="relative flex max-w-[840px] flex-col items-center gap-6">
+				<div class="mb-2 flex flex-col items-center gap-4">
+					<div class="relative flex h-15.5 w-15.5 items-center justify-center rounded-[19px] bg-idf-navy">
+						<span class="block h-6 w-6 rounded-full border-3 border-idf-cream"></span>
+						<span class="absolute top-2.5 right-2.5 h-3 w-3 rotate-45 bg-idf-amber"></span>
+					</div>
+					<span class="font-sans text-[11px] tracking-[0.3em] text-idf-navy/60 uppercase">Idiomas del Futuro</span>
+				</div>
+				<h1 class="m-0 font-display text-[clamp(40px,5.4vw,74px)] leading-[1.05] tracking-tight text-idf-navy">Nuestro método</h1>
+				<p class="m-0 max-w-[58ch] font-sans text-[17px] leading-loose text-idf-ink/66">
+					Hablas el 70% de la clase. Explicamos gramática solo cuando ya la necesitas para decir algo que quieres decir. Así se ve una sesión de dos horas con nosotros.
+				</p>
+			</div>
+		</section>
+
+		<section class="flex w-full flex-col items-center px-6 pt-16 pb-28">
+			<div class="grid w-full max-w-[1000px] grid-cols-3 gap-6 max-[1000px]:grid-cols-2 max-[640px]:grid-cols-1">
+				{stats.map((s) => (
+					<div class="flex flex-col gap-3 rounded-[32px] border border-idf-navy/12 bg-idf-cream-light p-9 shadow-sm">
+						<span class="font-sans text-[44px] text-idf-navy">{s.value}</span>
+						<p class="m-0 font-sans text-sm leading-loose text-idf-ink/66">{s.desc}</p>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<section class="flex w-full flex-col items-center bg-idf-cream-alt px-6 py-28 max-[1000px]:py-22 max-[640px]:py-16">
+			<div class="mx-auto mb-16 flex max-w-3xl flex-col gap-4 text-center">
+				<h2 class="m-0 font-display text-[clamp(34px,4vw,52px)] leading-tight tracking-tight text-idf-navy">Una clase de dos horas, paso a paso</h2>
+				<p class="m-0 font-sans text-[17px] leading-loose text-idf-ink/62">La misma estructura en los tres idiomas, del primer nivel al último.</p>
+			</div>
+			<div class="flex w-full max-w-[860px] flex-col gap-4">
+				{timeline.map((step) => (
+					<div class="grid grid-cols-[96px_1fr] items-start gap-7 rounded-[32px] border border-idf-navy/12 bg-idf-cream-light p-8 max-[640px]:grid-cols-1 max-[640px]:gap-2">
+						<span class="font-sans text-[13px] tracking-[0.12em] text-idf-navy/50">{step.time}</span>
+						<div class="flex flex-col gap-2">
+							<h3 class="m-0 font-display text-[22px] text-idf-navy">{step.title}</h3>
+							<p class="m-0 font-sans text-[15px] leading-[1.85] text-idf-ink/68">{step.desc}</p>
+						</div>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<section class="flex w-full justify-center px-6 py-28 max-[1000px]:py-22 max-[640px]:py-16">
+			<div class="grid w-full max-w-[1000px] grid-cols-2 items-center gap-12 max-[1000px]:grid-cols-1">
+				<div class="aspect-4/3 overflow-hidden rounded-[40px] border border-idf-navy/12">
+					<img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80" alt="Trabajo en equipo en clase" class="block h-full w-full object-cover saturate-60" />
+				</div>
+				<div class="flex flex-col gap-5">
+					<span class="font-sans text-[11px] tracking-[0.16em] text-idf-navy/55 uppercase">Qué no hacemos</span>
+					<h2 class="m-0 font-display text-[38px] leading-tight tracking-tight text-idf-navy">Nada de listas de verbos para memorizar</h2>
+					<p class="m-0 font-sans text-[15px] leading-[1.85] text-idf-ink/68">No damos tareas de copiar conjugaciones, no calificamos con rojo y no dejamos que una sola persona se lleve la clase hablando. Si un tema no te sirve para decir algo real, no entra al plan.</p>
+					<div class="mt-2 flex flex-col gap-3">
+						{notDone.map((item) => (
+							<span class="rounded-[20px] bg-idf-blue-soft px-5 py-4 font-sans text-sm text-idf-navy">{item}</span>
+						))}
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="flex w-full justify-center px-6 pb-32">
+			<div class="flex w-full max-w-[1000px] flex-wrap items-center justify-between gap-10 rounded-[40px] bg-idf-navy p-14 max-[1000px]:p-8 max-[640px]:p-6">
+				<div class="flex max-w-[52ch] flex-col gap-3">
+					<h2 class="m-0 font-display text-[34px] leading-tight text-idf-cream">Pruébalo en una clase muestra</h2>
+					<p class="m-0 font-sans text-[15px] leading-loose text-idf-cream/72">Entra a una sesión real de 45 minutos y decide después. También puedes revisar los próximos inicios.</p>
+				</div>
+				<div class="flex flex-wrap gap-3">
+					<a href="https://wa.me/523311223344?text=Quiero%20una%20clase%20muestra" target="_blank" rel="noopener noreferrer" class="rounded-full bg-idf-whatsapp px-7 py-4 font-sans text-[15px] font-semibold whitespace-nowrap text-idf-whatsapp-ink no-underline">
+						Agendar por WhatsApp
+					</a>
+					<a href="/calendarios" class="rounded-full border border-idf-cream/30 bg-idf-cream/12 px-7 py-4 font-sans text-[15px] whitespace-nowrap text-idf-cream no-underline">
+						Ver próximos inicios
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<SiteFooter />
+		<WhatsAppFab />
+	</div>
+</Layout>

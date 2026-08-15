@@ -1,0 +1,79 @@
+---
+const waHref = "https://wa.me/523311223344?text=%C2%A1Hola!%20Quiero%20reservar%20un%20lugar%20en%20Idiomas%20del%20Futuro";
+
+const navLinks = [
+	{ href: "/calendarios", label: "Próximos inicios" },
+	{ href: "/profesores", label: "Profesores" },
+	{ href: "/metodo", label: "Método" },
+];
+---
+
+<input type="checkbox" id="idf-nav-toggle" class="peer hidden" />
+
+<nav class="fixed top-0 left-0 z-100 w-full border-b border-idf-navy/10 bg-idf-cream/82 backdrop-blur-2xl">
+	<div class="mx-auto flex h-20 w-full max-w-6xl items-center justify-between gap-4 px-6 max-[520px]:h-17 max-[520px]:px-4">
+		<a href="/" class="flex shrink-0 items-center gap-3 no-underline" title="Idiomas del Futuro">
+			<div class="relative flex h-8.5 w-8.5 shrink-0 items-center justify-center rounded-[11px] bg-idf-navy">
+				<span class="block h-3.5 w-3.5 rounded-full border-2 border-idf-cream"></span>
+				<span class="absolute top-1.5 right-1.5 h-1.75 w-1.75 rotate-45 bg-idf-amber"></span>
+			</div>
+			<span class="whitespace-nowrap font-display text-[23px] tracking-tight text-idf-navy max-[520px]:text-[19px]">Idiomas del Futuro</span>
+		</a>
+
+		<div class="flex min-w-0 items-center gap-1 max-[1000px]:hidden">
+			{navLinks.map((link) => (
+				<a
+					href={link.href}
+					class="rounded-full px-3.5 py-2.5 font-sans text-sm whitespace-nowrap text-idf-navy no-underline transition-all duration-300 hover:bg-idf-blue/8"
+				>
+					{link.label}
+				</a>
+			))}
+			<a
+				href={waHref}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="ml-2 inline-flex items-center gap-2 rounded-full bg-idf-navy px-4.5 py-2.75 font-sans text-sm whitespace-nowrap text-idf-cream no-underline shadow-sm transition-all duration-300 hover:bg-idf-blue hover:shadow-[0_8px_22px_rgba(20,52,92,0.18)]"
+			>
+				Reservar por WhatsApp
+			</a>
+		</div>
+
+		<label
+			for="idf-nav-toggle"
+			class="hidden shrink-0 cursor-pointer items-center gap-2.5 rounded-full bg-idf-blue/10 px-5 py-2.75 font-sans text-sm whitespace-nowrap text-idf-navy max-[1000px]:inline-flex"
+		>
+			Menú
+		</label>
+	</div>
+</nav>
+
+<div class="fixed inset-0 z-110 hidden bg-black/45 peer-checked:block">
+	<label for="idf-nav-toggle" class="absolute inset-0"></label>
+</div>
+<aside class="fixed top-0 right-0 z-120 hidden h-full w-full max-w-[380px] flex-col gap-2 border-l border-idf-navy/12 bg-idf-cream p-6 shadow-[-20px_0_60px_rgba(20,52,92,0.18)] peer-checked:flex">
+	<div class="flex items-center justify-between gap-4 border-b border-idf-navy/10 pb-5">
+		<span class="font-sans text-[11px] tracking-[0.18em] text-idf-navy/50 uppercase">Menú</span>
+		<label
+			for="idf-nav-toggle"
+			class="cursor-pointer rounded-full bg-idf-blue/10 px-4.5 py-2.5 font-sans text-sm text-idf-navy"
+		>
+			Cerrar
+		</label>
+	</div>
+	{navLinks.map((link) => (
+		<a href={link.href} class="rounded-[18px] px-3 py-4 font-display text-[28px] text-idf-navy no-underline hover:bg-idf-blue/8">
+			{link.label}
+		</a>
+	))}
+	<a href="/#servicios" class="rounded-[18px] px-3 py-4 font-display text-[28px] text-idf-navy no-underline hover:bg-idf-blue/8">Servicios</a>
+	<a href="/#ubicacion" class="rounded-[18px] px-3 py-4 font-display text-[28px] text-idf-navy no-underline hover:bg-idf-blue/8">Ubicación</a>
+	<a
+		href={waHref}
+		target="_blank"
+		rel="noopener noreferrer"
+		class="mt-auto inline-flex items-center justify-center rounded-full bg-idf-whatsapp px-6 py-4 font-sans text-base font-semibold text-idf-whatsapp-ink no-underline"
+	>
+		Reservar por WhatsApp
+	</a>
+</aside>

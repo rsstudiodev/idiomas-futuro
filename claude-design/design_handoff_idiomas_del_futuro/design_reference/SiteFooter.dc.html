@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box}
+@font-face{font-family:'FiraSans';src:url('./public/fonts/FiraSans-Regular.ttf') format('truetype');font-weight:normal;font-style:normal;font-display:swap}
+*,*::before,*::after{box-sizing:border-box}
+@font-face{font-family:'NeueMachina';src:url('./public/fonts/NeueMachina-Regular.otf') format('opentype');font-weight:normal;font-style:normal;font-display:swap}
+@media (max-width:640px){[data-fgrid]{gap:32px !important}[data-fbottom]{flex-direction:column !important;align-items:flex-start !important}}
+</style>
+</helmet>
+<footer style="width:100%;background:#fffdf8;border-top:1px solid rgba(20,52,92,0.10)">
+  <div data-fgrid="true" style="margin:0 auto;width:100%;max-width:1280px;padding:80px 24px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:40px">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <div style="display:flex;align-items:center;gap:14px">
+        <div style="position:relative;width:46px;height:46px;border-radius:15px;background:#14345c;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="display:block;width:18px;height:18px;border-radius:9999px;border:3px solid #faf6ec"></span><span style="position:absolute;right:7px;top:7px;width:9px;height:9px;background:#e0a35c;transform:rotate(45deg)"></span></div>
+        <span style="font-family:'Instrument Serif',ui-serif,serif;font-size:28px;letter-spacing:-0.01em;color:#14345c">Idiomas del Futuro</span>
+      </div>
+      <p style="font-family:'NeueMachina',sans-serif;font-size:13px;line-height:1.8;color:rgba(28,26,22,0.62);max-width:32ch;margin:0">Escuela de idiomas con grupos reducidos y práctica conversacional desde la primera clase. Inglés, portugués y chino mandarín.</p>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <span style="font-family:'NeueMachina',sans-serif;font-size:13px;color:rgba(28,26,22,0.62)">Av. de los Idiomas 128, Col. El Mirador, Guadalajara, Jal.</span>
+        <a href="tel:+523311223344" style="font-family:'NeueMachina',sans-serif;font-size:13px;color:#2c5f9e;text-decoration:none" style-hover="color:#14345c">33 1122 3344</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <h3 style="font-family:'Instrument Serif',ui-serif,serif;font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(20,52,92,0.5);margin:0">Cursos</h3>
+      <a href="./Calendarios.dc.html#ingles" style="font-family:'NeueMachina',sans-serif;font-size:13px;color:rgba(28,26,22,0.7);text-decoration:none" style-hover="color:#14345c">Inglés</a>
+      <a href="./Calendarios.dc.html#portugues" style="font-family:'NeueMachina',sans-serif;font-size:13px;color:rgba(28,26,22,0.7);text-decoration:none" style-hover="color:#14345c">Portugués</a>
+      <a href="./Calendarios.dc.html#chino" style="font-family:'NeueMachina',sans-serif;font-size:13px;color:rgba(28,26,22,0.7);text-decoration:none" style-hover="color:#14345c">Chino mandarín</a>
+      <a href="./Home.dc.html#servicios" style="font-family:'NeueMachina',sans-serif;font-size:13px;color:rgba(28,26,22,0.7);text-decoration:none" style-hover="color:#14345c">Cursos corporativos</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <h3 style="font-family:'Instrument Serif',ui-serif,serif;font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(20,52,92,0.5);margin:0">Explorar</h3>
+      <a href="./Calendarios.dc.html" style="font-family:'NeueMachina',sans-serif;font-size:13px;color:rgba(28,26,22,0.7);text-decoration:none" style-hover="color:#14345c">Próximos inicios</a>
+      <a href="./Profesores.dc.html" style="font-family:'NeueMachina',sans-serif;font-size:13px;color:rgba(28,26,22,0.7);text-decoration:none" style-hover="color:#14345c">Profesores</a>
+      <a href="./Metodo.dc.html" style="font-family:'NeueMachina',sans-serif;font-size:13px;color:rgba(28,26,22,0.7);text-decoration:none" style-hover="color:#14345c">Nuestro método</a>
+      <a href="./Home.dc.html#ubicacion" style="font-family:'NeueMachina',sans-serif;font-size:13px;color:rgba(28,26,22,0.7);text-decoration:none" style-hover="color:#14345c">Ubicación</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <h3 style="font-family:'Instrument Serif',ui-serif,serif;font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(20,52,92,0.5);margin:0">Síguenos</h3>
+      <a href="./Home.dc.html#instagram" style="font-family:'NeueMachina',sans-serif;font-size:13px;color:rgba(28,26,22,0.7);text-decoration:none" style-hover="color:#14345c">@idiomasdelfuturo</a>
+      <span style="font-family:'NeueMachina',sans-serif;font-size:13px;color:rgba(28,26,22,0.45)">Lun a Sáb · 7:00 – 21:00</span>
+    </div>
+  </div>
+  <div data-fbottom="true" style="margin:0 auto;width:100%;max-width:1280px;padding:24px 24px 48px;border-top:1px solid rgba(20,52,92,0.10);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+    <span style="font-family:'NeueMachina',sans-serif;font-size:11px;color:rgba(28,26,22,0.45)">© 2026 Idiomas del Futuro · Demo ficticio, datos y reseñas de muestra</span>
+    <span style="font-family:'FiraSans',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(20,52,92,0.45)">Guadalajara, México</span>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:460}}"></script>
+</body>
+</html>

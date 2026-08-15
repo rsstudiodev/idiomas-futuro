@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box}
+@font-face{font-family:'FiraSans';src:url('./public/fonts/FiraSans-Regular.ttf') format('truetype');font-weight:normal;font-style:normal;font-display:swap}
+*,*::before,*::after{box-sizing:border-box}
+@font-face{font-family:'NeueMachina';src:url('./public/fonts/NeueMachina-Regular.otf') format('opentype');font-weight:normal;font-style:normal;font-display:swap}
+html{scroll-behavior:smooth}
+body{margin:0;background:#faf6ec}
+a{color:#2c5f9e}
+a:hover{color:#14345c}
+
+@media (max-width:1000px){
+  section{padding-top:88px !important;padding-bottom:88px !important;padding-left:20px !important;padding-right:20px !important}
+  [data-r4]{grid-template-columns:repeat(2,1fr) !important}
+  [data-r3]{grid-template-columns:repeat(2,1fr) !important}
+  [data-r2]{grid-template-columns:1fr !important;gap:32px !important}
+  [data-rtable]{grid-template-columns:1fr !important;gap:10px !important}
+  [data-rtable] > *{justify-self:start !important}
+  [data-rthead]{display:none !important}
+  [data-pad]{padding:32px !important}
+  [data-tiles]{grid-auto-rows:170px !important}
+}
+@media (max-width:640px){
+  section{padding-top:64px !important;padding-bottom:64px !important;padding-left:16px !important;padding-right:16px !important}
+  [data-r4],[data-r3]{grid-template-columns:1fr !important}
+  [data-tiles]{grid-template-columns:1fr !important;grid-auto-rows:200px !important}
+  [data-tiles] > *{grid-column:auto !important;grid-row:auto !important}
+  [data-pad]{padding:24px !important}
+  [data-hero]{padding-top:130px !important}
+}
+</style>
+</helmet>
+<div style="width:100%;background:#faf6ec;color:#1c1a16;overflow-x:hidden">
+  <dc-import name="SiteHeader" hint-size="100%,80px"></dc-import>
+
+  <section data-hero="true" style="position:relative;width:100%;display:flex;flex-direction:column;align-items:center;padding:200px 24px 96px;box-sizing:border-box;overflow:hidden;text-align:center">
+    <div style="position:absolute;inset:0;background:radial-gradient(110% 80% at 50% -20%, #c5d8f0 0%, #dfe9f4 34%, #f1efe6 64%, #faf6ec 88%)"></div>
+    <div style="position:relative;display:flex;flex-direction:column;align-items:center;gap:24px;max-width:840px">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:16px;margin-bottom:8px">
+        <div style="position:relative;width:62px;height:62px;border-radius:19px;background:#14345c;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="display:block;width:24px;height:24px;border-radius:9999px;border:3px solid #faf6ec"></span><span style="position:absolute;right:10px;top:10px;width:12px;height:12px;background:#e0a35c;transform:rotate(45deg)"></span></div>
+        <span style="font-family:'FiraSans',sans-serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(20,52,92,0.6)">Idiomas del Futuro</span>
+      </div>
+      <h1 style="margin:0;font-family:'Instrument Serif',ui-serif,serif;font-size:clamp(40px,5.4vw,74px);line-height:1.05;letter-spacing:-0.012em;color:#14345c">Nuestro método</h1>
+      <p style="margin:0;max-width:58ch;font-family:'NeueMachina',sans-serif;font-size:17px;line-height:1.8;color:rgba(28,26,22,0.66)">Hablas el 70% de la clase. Explicamos gramática solo cuando ya la necesitas para decir algo que quieres decir. Así se ve una sesión de dos horas con nosotros.</p>
+    </div>
+  </section>
+
+  
+  <section style="display:flex;flex-direction:column;align-items:center;padding:64px 24px 112px;width:100%;box-sizing:border-box">
+    <div data-r3="true" style="width:100%;max-width:1000px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+      <div style="padding:36px;border-radius:32px;background:#fffdf8;border:1px solid rgba(20,52,92,0.12);box-shadow:0 1px 2px rgba(28,26,22,.05);display:flex;flex-direction:column;gap:12px">
+        <span style="font-family:'FiraSans',sans-serif;font-size:44px;color:#14345c">70%</span>
+        <p style="margin:0;font-family:'NeueMachina',sans-serif;font-size:14px;line-height:1.8;color:rgba(28,26,22,0.66)">del tiempo de clase lo pasas hablando o escribiendo tú, no escuchando al profesor.</p>
+      </div>
+      <div style="padding:36px;border-radius:32px;background:#fffdf8;border:1px solid rgba(20,52,92,0.12);box-shadow:0 1px 2px rgba(28,26,22,.05);display:flex;flex-direction:column;gap:12px">
+        <span style="font-family:'FiraSans',sans-serif;font-size:44px;color:#14345c">8</span>
+        <p style="margin:0;font-family:'NeueMachina',sans-serif;font-size:14px;line-height:1.8;color:rgba(28,26,22,0.66)">personas como máximo por grupo, para que cada quien tenga turno en cada actividad.</p>
+      </div>
+      <div style="padding:36px;border-radius:32px;background:#fffdf8;border:1px solid rgba(20,52,92,0.12);box-shadow:0 1px 2px rgba(28,26,22,.05);display:flex;flex-direction:column;gap:12px">
+        <span style="font-family:'FiraSans',sans-serif;font-size:44px;color:#14345c">4</span>
+        <p style="margin:0;font-family:'NeueMachina',sans-serif;font-size:14px;line-height:1.8;color:rgba(28,26,22,0.66)">reportes de avance al año, con grabaciones tuyas del primer y del último día.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;align-items:center;padding:112px 24px;width:100%;box-sizing:border-box;background:#f3eee0">
+    <div style="margin:0 auto 64px;max-width:768px;text-align:center;display:flex;flex-direction:column;gap:16px">
+      <h2 style="margin:0;font-family:'Instrument Serif',ui-serif,serif;font-size:clamp(34px,4vw,52px);line-height:1.08;letter-spacing:-0.008em;color:#14345c">Una clase de dos horas, paso a paso</h2>
+      <p style="margin:0;font-family:'NeueMachina',sans-serif;font-size:17px;line-height:1.8;color:rgba(28,26,22,0.62)">La misma estructura en los tres idiomas, del primer nivel al último.</p>
+    </div>
+    <div style="width:100%;max-width:860px;display:flex;flex-direction:column;gap:16px">
+      <div style="display:grid;grid-template-columns:96px 1fr;gap:28px;align-items:start;padding:32px;background:#fffdf8;border:1px solid rgba(20,52,92,0.12);border-radius:32px">
+        <span style="font-family:'FiraSans',sans-serif;font-size:13px;letter-spacing:0.12em;color:rgba(20,52,92,0.5)">0–15 min</span>
+        <div style="display:flex;flex-direction:column;gap:8px"><h3 style="margin:0;font-family:'Instrument Serif',ui-serif,serif;font-size:22px;color:#14345c">Arranque hablado</h3><p style="margin:0;font-family:'NeueMachina',sans-serif;font-size:15px;line-height:1.85;color:rgba(28,26,22,0.68)">En parejas, sobre algo que te pasó esta semana. Nadie abre el libro todavía y nadie corrige aún.</p></div>
+      </div>
+      <div style="display:grid;grid-template-columns:96px 1fr;gap:28px;align-items:start;padding:32px;background:#fffdf8;border:1px solid rgba(20,52,92,0.12);border-radius:32px">
+        <span style="font-family:'FiraSans',sans-serif;font-size:13px;letter-spacing:0.12em;color:rgba(20,52,92,0.5)">15–40 min</span>
+        <div style="display:flex;flex-direction:column;gap:8px"><h3 style="margin:0;font-family:'Instrument Serif',ui-serif,serif;font-size:22px;color:#14345c">Entrada de contexto</h3><p style="margin:0;font-family:'NeueMachina',sans-serif;font-size:15px;line-height:1.85;color:rgba(28,26,22,0.68)">Un audio, un video corto o un texto real: una nota de prensa, un menú, un chat de trabajo. Primero entiendes, después analizas.</p></div>
+      </div>
+      <div style="display:grid;grid-template-columns:96px 1fr;gap:28px;align-items:start;padding:32px;background:#fffdf8;border:1px solid rgba(20,52,92,0.12);border-radius:32px">
+        <span style="font-family:'FiraSans',sans-serif;font-size:13px;letter-spacing:0.12em;color:rgba(20,52,92,0.5)">40–60 min</span>
+        <div style="display:flex;flex-direction:column;gap:8px"><h3 style="margin:0;font-family:'Instrument Serif',ui-serif,serif;font-size:22px;color:#14345c">La regla, cuando ya la necesitas</h3><p style="margin:0;font-family:'NeueMachina',sans-serif;font-size:15px;line-height:1.85;color:rgba(28,26,22,0.68)">Veinte minutos de gramática explicada sobre los ejemplos que acabas de escuchar, no sobre frases inventadas.</p></div>
+      </div>
+      <div style="display:grid;grid-template-columns:96px 1fr;gap:28px;align-items:start;padding:32px;background:#fffdf8;border:1px solid rgba(20,52,92,0.12);border-radius:32px">
+        <span style="font-family:'FiraSans',sans-serif;font-size:13px;letter-spacing:0.12em;color:rgba(20,52,92,0.5)">60–100 min</span>
+        <div style="display:flex;flex-direction:column;gap:8px"><h3 style="margin:0;font-family:'Instrument Serif',ui-serif,serif;font-size:22px;color:#14345c">Tarea con resultado</h3><p style="margin:0;font-family:'NeueMachina',sans-serif;font-size:15px;line-height:1.85;color:rgba(28,26,22,0.68)">Negociar una renta, resolver una queja, presentar tu proyecto. Se hace en equipo y se presenta frente al grupo.</p></div>
+      </div>
+      <div style="display:grid;grid-template-columns:96px 1fr;gap:28px;align-items:start;padding:32px;background:#fffdf8;border:1px solid rgba(20,52,92,0.12);border-radius:32px">
+        <span style="font-family:'FiraSans',sans-serif;font-size:13px;letter-spacing:0.12em;color:rgba(20,52,92,0.5)">100–120 min</span>
+        <div style="display:flex;flex-direction:column;gap:8px"><h3 style="margin:0;font-family:'Instrument Serif',ui-serif,serif;font-size:22px;color:#14345c">Corrección amable</h3><p style="margin:0;font-family:'NeueMachina',sans-serif;font-size:15px;line-height:1.85;color:rgba(28,26,22,0.68)">El profesor devuelve los errores más útiles del día, anónimos y en el pizarrón. Te vas con tres cosas concretas que mejorar.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="display:flex;justify-content:center;padding:112px 24px;width:100%;box-sizing:border-box">
+    <div data-r2="true" style="width:100%;max-width:1000px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center">
+      <div style="border-radius:40px;overflow:hidden;aspect-ratio:4/3;border:1px solid rgba(20,52,92,0.12)"><img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Trabajo en equipo en clase" style="width:100%;height:100%;object-fit:cover;filter:saturate(0.6);display:block" /></div>
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <span style="font-family:'FiraSans',sans-serif;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(20,52,92,0.55)">Qué no hacemos</span>
+        <h2 style="margin:0;font-family:'Instrument Serif',ui-serif,serif;font-size:38px;line-height:1.12;letter-spacing:-0.008em;color:#14345c">Nada de listas de verbos para memorizar</h2>
+        <p style="margin:0;font-family:'NeueMachina',sans-serif;font-size:15px;line-height:1.85;color:rgba(28,26,22,0.68)">No damos tareas de copiar conjugaciones, no calificamos con rojo y no dejamos que una sola persona se lleve la clase hablando. Si un tema no te sirve para decir algo real, no entra al plan.</p>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:8px">
+          <span style="padding:16px 20px;border-radius:20px;background:#e3ecf7;font-family:'NeueMachina',sans-serif;font-size:14px;color:#14345c">Material digital incluido, sin comprar libros aparte</span>
+          <span style="padding:16px 20px;border-radius:20px;background:#e3ecf7;font-family:'NeueMachina',sans-serif;font-size:14px;color:#14345c">Puedes reponer una clase perdida con otro grupo del mismo nivel</span>
+          <span style="padding:16px 20px;border-radius:20px;background:#e3ecf7;font-family:'NeueMachina',sans-serif;font-size:14px;color:#14345c">Certificación interna al terminar cada nivel</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="display:flex;justify-content:center;padding:0 24px 128px;width:100%;box-sizing:border-box">
+    <div data-pad="true" style="width:100%;max-width:1000px;padding:56px;border-radius:40px;background:#14345c;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap">
+      <div style="display:flex;flex-direction:column;gap:12px;max-width:52ch">
+        <h2 style="margin:0;font-family:'Instrument Serif',ui-serif,serif;font-size:34px;line-height:1.15;color:#faf6ec">Pruébalo en una clase muestra</h2>
+        <p style="margin:0;font-family:'NeueMachina',sans-serif;font-size:15px;line-height:1.8;color:rgba(250,246,236,0.72)">Entra a una sesión real de 45 minutos y decide después. También puedes revisar los próximos inicios.</p>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="https://wa.me/523311223344?text=Quiero%20una%20clase%20muestra" target="_blank" rel="noopener noreferrer" style="padding:16px 28px;border-radius:9999px;background:#25d366;color:#0b2d17;font-family:'FiraSans',sans-serif;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap">Agendar por WhatsApp</a>
+        <a href="./Calendarios.dc.html" style="padding:16px 28px;border-radius:9999px;background:rgba(250,246,236,0.12);border:1px solid rgba(250,246,236,0.3);color:#faf6ec;font-family:'FiraSans',sans-serif;font-size:15px;text-decoration:none;white-space:nowrap">Ver próximos inicios</a>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+  <dc-import name="WhatsAppFab" hint-size="240px,60px"></dc-import>
+</div></x-dc>
+</body>
+</html>

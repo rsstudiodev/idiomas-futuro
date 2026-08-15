@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box}
+@font-face{font-family:'FiraSans';src:url('./public/fonts/FiraSans-Regular.ttf') format('truetype');font-weight:normal;font-style:normal;font-display:swap}
+*,*::before,*::after{box-sizing:border-box}
+@font-face{font-family:'NeueMachina';src:url('./public/fonts/NeueMachina-Regular.otf') format('opentype');font-weight:normal;font-style:normal;font-display:swap}
+html{scroll-behavior:smooth}
+body{margin:0;background:#faf6ec}
+a{color:#2c5f9e}
+a:hover{color:#14345c}
+
+@media (max-width:1000px){
+  section{padding-top:88px !important;padding-bottom:88px !important;padding-left:20px !important;padding-right:20px !important}
+  [data-r4]{grid-template-columns:repeat(2,1fr) !important}
+  [data-r3]{grid-template-columns:repeat(2,1fr) !important}
+  [data-r2]{grid-template-columns:1fr !important;gap:32px !important}
+  [data-rtable]{grid-template-columns:1fr !important;gap:10px !important}
+  [data-rtable] > *{justify-self:start !important}
+  [data-rthead]{display:none !important}
+  [data-pad]{padding:32px !important}
+  [data-tiles]{grid-auto-rows:170px !important}
+}
+@media (max-width:640px){
+  section{padding-top:64px !important;padding-bottom:64px !important;padding-left:16px !important;padding-right:16px !important}
+  [data-r4],[data-r3]{grid-template-columns:1fr !important}
+  [data-tiles]{grid-template-columns:1fr !important;grid-auto-rows:200px !important}
+  [data-tiles] > *{grid-column:auto !important;grid-row:auto !important}
+  [data-pad]{padding:24px !important}
+  [data-hero]{padding-top:130px !important}
+}
+</style>
+</helmet>
+<div style="width:100%;background:#faf6ec;color:#1c1a16;overflow-x:hidden">
+  <dc-import name="SiteHeader" hint-size="100%,80px"></dc-import>
+
+  <section data-hero="true" style="position:relative;width:100%;display:flex;flex-direction:column;align-items:center;padding:200px 24px 96px;box-sizing:border-box;overflow:hidden;text-align:center">
+    <div style="position:absolute;inset:0;background:radial-gradient(110% 80% at 50% -20%, #c5d8f0 0%, #dfe9f4 34%, #f1efe6 64%, #faf6ec 88%)"></div>
+    <div style="position:relative;display:flex;flex-direction:column;align-items:center;gap:24px;max-width:820px">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:16px;margin-bottom:8px">
+        <div style="position:relative;width:62px;height:62px;border-radius:19px;background:#14345c;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="display:block;width:24px;height:24px;border-radius:9999px;border:3px solid #faf6ec"></span><span style="position:absolute;right:10px;top:10px;width:12px;height:12px;background:#e0a35c;transform:rotate(45deg)"></span></div>
+        <span style="font-family:'FiraSans',sans-serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(20,52,92,0.6)">Idiomas del Futuro</span>
+      </div>
+      <h1 style="margin:0;font-family:'Instrument Serif',ui-serif,serif;font-size:clamp(40px,5.4vw,74px);line-height:1.05;letter-spacing:-0.012em;color:#14345c">Quién te va a enseñar</h1>
+      <p style="margin:0;max-width:56ch;font-family:'NeueMachina',sans-serif;font-size:17px;line-height:1.8;color:rgba(28,26,22,0.66)">Cuatro profesores de planta, todos certificados y con años viviendo en el idioma que enseñan. Nadie improvisa una clase aquí.</p>
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;align-items:center;gap:32px;padding:64px 24px 128px;width:100%;box-sizing:border-box">
+    <div data-r2="true" data-pad="true" style="width:100%;max-width:1000px;display:grid;grid-template-columns:340px 1fr;gap:48px;align-items:center;padding:40px;background:#fffdf8;border:1px solid rgba(20,52,92,0.12);border-radius:40px;box-shadow:0 1px 2px rgba(28,26,22,.05)">
+      <div style="border-radius:32px;overflow:hidden;aspect-ratio:4/5"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Fernanda Ortega" style="width:100%;height:100%;object-fit:cover;filter:saturate(0.6);display:block" /></div>
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <span style="font-family:'FiraSans',sans-serif;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(20,52,92,0.55)">Coordinadora académica · Inglés</span>
+        <h2 style="margin:0;font-family:'Instrument Serif',ui-serif,serif;font-size:34px;letter-spacing:-0.008em;color:#14345c">Fernanda Ortega</h2>
+        <p style="margin:0;font-family:'NeueMachina',sans-serif;font-size:15px;line-height:1.85;color:rgba(28,26,22,0.68)">Doce años enseñando inglés, seis de ellos en Manchester dando clases a adultos migrantes. Diseña los planes de los niveles B1 a C1 y entrena a los demás profesores en corrección amable.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <span style="padding:8px 14px;border-radius:9999px;background:#e3ecf7;font-family:'FiraSans',sans-serif;font-size:12px;color:#14345c">C2 certificado</span>
+          <span style="padding:8px 14px;border-radius:9999px;background:#e3ecf7;font-family:'FiraSans',sans-serif;font-size:12px;color:#14345c">Formación docente</span>
+          <span style="padding:8px 14px;border-radius:9999px;background:#e3ecf7;font-family:'FiraSans',sans-serif;font-size:12px;color:#14345c">Prep. de exámenes</span>
+        </div>
+      </div>
+    </div>
+
+    <div data-r2="true" data-pad="true" style="width:100%;max-width:1000px;display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:center;padding:40px;background:#fffdf8;border:1px solid rgba(20,52,92,0.12);border-radius:40px;box-shadow:0 1px 2px rgba(28,26,22,.05)">
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <span style="font-family:'FiraSans',sans-serif;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(20,52,92,0.55)">Portugués · Conversación</span>
+        <h2 style="margin:0;font-family:'Instrument Serif',ui-serif,serif;font-size:34px;letter-spacing:-0.008em;color:#14345c">Thiago Nascimento</h2>
+        <p style="margin:0;font-family:'NeueMachina',sans-serif;font-size:15px;line-height:1.85;color:rgba(28,26,22,0.68)">Nació en Salvador de Bahía y llegó a Guadalajara hace ocho años. Da los niveles de portugués completos y el club de conversación de los sábados; sus clases empiezan siempre con una nota de prensa del día.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <span style="padding:8px 14px;border-radius:9999px;background:#e3ecf7;font-family:'FiraSans',sans-serif;font-size:12px;color:#14345c">Hablante nativo</span>
+          <span style="padding:8px 14px;border-radius:9999px;background:#e3ecf7;font-family:'FiraSans',sans-serif;font-size:12px;color:#14345c">Portugués de negocios</span>
+          <span style="padding:8px 14px;border-radius:9999px;background:#e3ecf7;font-family:'FiraSans',sans-serif;font-size:12px;color:#14345c">Fonética</span>
+        </div>
+      </div>
+      <div style="border-radius:32px;overflow:hidden;aspect-ratio:4/5"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Thiago Nascimento" style="width:100%;height:100%;object-fit:cover;filter:saturate(0.6);display:block" /></div>
+    </div>
+
+    <div data-r2="true" data-pad="true" style="width:100%;max-width:1000px;display:grid;grid-template-columns:340px 1fr;gap:48px;align-items:center;padding:40px;background:#fffdf8;border:1px solid rgba(20,52,92,0.12);border-radius:40px;box-shadow:0 1px 2px rgba(28,26,22,.05)">
+      <div style="border-radius:32px;overflow:hidden;aspect-ratio:4/5"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Li Wen Chen" style="width:100%;height:100%;object-fit:cover;filter:saturate(0.6);display:block" /></div>
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <span style="font-family:'FiraSans',sans-serif;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(20,52,92,0.55)">Chino mandarín · HSK</span>
+        <h2 style="margin:0;font-family:'Instrument Serif',ui-serif,serif;font-size:34px;letter-spacing:-0.008em;color:#14345c">Li Wen Chen</h2>
+        <p style="margin:0;font-family:'NeueMachina',sans-serif;font-size:15px;line-height:1.85;color:rgba(28,26,22,0.68)">Originaria de Taipéi, licenciada en enseñanza de mandarín como lengua extranjera. Lleva los cuatro niveles de HSK y el taller de caracteres, donde se escribe a mano desde el primer día.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <span style="padding:8px 14px;border-radius:9999px;background:#e3ecf7;font-family:'FiraSans',sans-serif;font-size:12px;color:#14345c">Hablante nativa</span>
+          <span style="padding:8px 14px;border-radius:9999px;background:#e3ecf7;font-family:'FiraSans',sans-serif;font-size:12px;color:#14345c">HSK 1–4</span>
+          <span style="padding:8px 14px;border-radius:9999px;background:#e3ecf7;font-family:'FiraSans',sans-serif;font-size:12px;color:#14345c">Caligrafía</span>
+        </div>
+      </div>
+    </div>
+
+    <div data-r2="true" data-pad="true" style="width:100%;max-width:1000px;display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:center;padding:40px;background:#fffdf8;border:1px solid rgba(20,52,92,0.12);border-radius:40px;box-shadow:0 1px 2px rgba(28,26,22,.05)">
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <span style="font-family:'FiraSans',sans-serif;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(20,52,92,0.55)">Inglés · Cursos in-company</span>
+        <h2 style="margin:0;font-family:'Instrument Serif',ui-serif,serif;font-size:34px;letter-spacing:-0.008em;color:#14345c">Kwame Mensah</h2>
+        <p style="margin:0;font-family:'NeueMachina',sans-serif;font-size:15px;line-height:1.85;color:rgba(28,26,22,0.68)">Ghanés, ingeniero de formación y profesor por vocación. Atiende los grupos corporativos y los niveles matutinos: sus sesiones se arman con casos reales del trabajo de cada alumno.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <span style="padding:8px 14px;border-radius:9999px;background:#e3ecf7;font-family:'FiraSans',sans-serif;font-size:12px;color:#14345c">Hablante nativo</span>
+          <span style="padding:8px 14px;border-radius:9999px;background:#e3ecf7;font-family:'FiraSans',sans-serif;font-size:12px;color:#14345c">Inglés técnico</span>
+          <span style="padding:8px 14px;border-radius:9999px;background:#e3ecf7;font-family:'FiraSans',sans-serif;font-size:12px;color:#14345c">Grupos de empresa</span>
+        </div>
+      </div>
+      <div style="border-radius:32px;overflow:hidden;aspect-ratio:4/5"><img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Kwame Mensah" style="width:100%;height:100%;object-fit:cover;filter:saturate(0.6);display:block" /></div>
+    </div>
+  </section>
+
+  <section style="display:flex;justify-content:center;padding:0 24px 128px;width:100%;box-sizing:border-box">
+    <div data-pad="true" style="width:100%;max-width:1000px;padding:56px;border-radius:40px;background:#14345c;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap">
+      <div style="display:flex;flex-direction:column;gap:12px;max-width:52ch">
+        <h2 style="margin:0;font-family:'Instrument Serif',ui-serif,serif;font-size:34px;line-height:1.15;color:#faf6ec">Conoce a tu profesor antes de inscribirte</h2>
+        <p style="margin:0;font-family:'NeueMachina',sans-serif;font-size:15px;line-height:1.8;color:rgba(250,246,236,0.72)">Puedes tomar una clase muestra de 45 minutos con el grupo que te interesa, sin compromiso.</p>
+      </div>
+      <a href="https://wa.me/523311223344?text=Quiero%20una%20clase%20muestra" target="_blank" rel="noopener noreferrer" style="padding:16px 30px;border-radius:9999px;background:#25d366;color:#0b2d17;font-family:'FiraSans',sans-serif;font-size:16px;font-weight:600;text-decoration:none;white-space:nowrap;transition:all .3s" style-hover="transform:translateY(-1px);box-shadow:0 12px 30px rgba(37,211,102,.35)">Agendar clase muestra</a>
+    </div>
+  </section>
+
+  <dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+  <dc-import name="WhatsAppFab" hint-size="240px,60px"></dc-import>
+</div>
+</x-dc>
+</body>
+</html>

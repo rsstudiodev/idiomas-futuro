@@ -1,0 +1,104 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import SiteHeader from "@/components/SiteHeader.astro";
+import SiteFooter from "@/components/SiteFooter.astro";
+import WhatsAppFab from "@/components/WhatsAppFab.astro";
+import { buildStaticPaths } from "astro-react-i18next/utils";
+
+export function getStaticPaths() {
+	return buildStaticPaths();
+}
+
+const teachers = [
+	{
+		eyebrow: "Coordinadora académica · Inglés",
+		name: "Fernanda Ortega",
+		bio: "Doce años enseñando inglés, seis de ellos en Manchester dando clases a adultos migrantes. Diseña los planes de los niveles B1 a C1 y entrena a los demás profesores en corrección amable.",
+		img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
+		tags: ["C2 certificado", "Formación docente", "Prep. de exámenes"],
+		imageFirst: true,
+	},
+	{
+		eyebrow: "Portugués · Conversación",
+		name: "Thiago Nascimento",
+		bio: "Nació en Salvador de Bahía y llegó a Guadalajara hace ocho años. Da los niveles de portugués completos y el club de conversación de los sábados; sus clases empiezan siempre con una nota de prensa del día.",
+		img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80",
+		tags: ["Hablante nativo", "Portugués de negocios", "Fonética"],
+		imageFirst: false,
+	},
+	{
+		eyebrow: "Chino mandarín · HSK",
+		name: "Li Wen Chen",
+		bio: "Originaria de Taipéi, licenciada en enseñanza de mandarín como lengua extranjera. Lleva los cuatro niveles de HSK y el taller de caracteres, donde se escribe a mano desde el primer día.",
+		img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80",
+		tags: ["Hablante nativa", "HSK 1–4", "Caligrafía"],
+		imageFirst: true,
+	},
+	{
+		eyebrow: "Inglés · Cursos in-company",
+		name: "Kwame Mensah",
+		bio: "Ghanés, ingeniero de formación y profesor por vocación. Atiende los grupos corporativos y los niveles matutinos: sus sesiones se arman con casos reales del trabajo de cada alumno.",
+		img: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=800&q=80",
+		tags: ["Hablante nativo", "Inglés técnico", "Grupos de empresa"],
+		imageFirst: false,
+	},
+];
+---
+
+<Layout title="Profesores — Idiomas del Futuro">
+	<div class="w-full overflow-x-hidden bg-idf-cream text-idf-ink">
+		<SiteHeader />
+
+		<section class="relative flex w-full flex-col items-center overflow-hidden px-6 pt-[200px] pb-24 text-center max-[640px]:pt-[130px]">
+			<div class="absolute inset-0 bg-[radial-gradient(110%_80%_at_50%_-20%,#c5d8f0_0%,#dfe9f4_34%,#f1efe6_64%,#faf6ec_88%)]"></div>
+			<div class="relative flex max-w-[820px] flex-col items-center gap-6">
+				<div class="mb-2 flex flex-col items-center gap-4">
+					<div class="relative flex h-15.5 w-15.5 items-center justify-center rounded-[19px] bg-idf-navy">
+						<span class="block h-6 w-6 rounded-full border-3 border-idf-cream"></span>
+						<span class="absolute top-2.5 right-2.5 h-3 w-3 rotate-45 bg-idf-amber"></span>
+					</div>
+					<span class="font-sans text-[11px] tracking-[0.3em] text-idf-navy/60 uppercase">Idiomas del Futuro</span>
+				</div>
+				<h1 class="m-0 font-display text-[clamp(40px,5.4vw,74px)] leading-[1.05] tracking-tight text-idf-navy">Quién te va a enseñar</h1>
+				<p class="m-0 max-w-[56ch] font-sans text-[17px] leading-loose text-idf-ink/66">
+					Cuatro profesores de planta, todos certificados y con años viviendo en el idioma que enseñan. Nadie improvisa una clase aquí.
+				</p>
+			</div>
+		</section>
+
+		<section class="flex w-full flex-col items-center gap-8 px-6 pt-16 pb-32">
+			{teachers.map((t) => (
+				<div class:list={["grid w-full max-w-[1000px] items-center gap-12 rounded-[40px] border border-idf-navy/12 bg-idf-cream-light p-10 shadow-sm max-[1000px]:grid-cols-1 max-[1000px]:p-8", t.imageFirst ? "grid-cols-[340px_1fr]" : "grid-cols-[1fr_340px]"]}>
+					<div class:list={["aspect-4/5 overflow-hidden rounded-[32px] max-[1000px]:order-1", !t.imageFirst && "order-2"]}>
+						<img src={t.img} alt={t.name} class="block h-full w-full object-cover saturate-60" />
+					</div>
+					<div class:list={["flex flex-col gap-4.5", !t.imageFirst && "order-1"]}>
+						<span class="font-sans text-[11px] tracking-[0.16em] text-idf-navy/55 uppercase">{t.eyebrow}</span>
+						<h2 class="m-0 font-display text-[34px] tracking-tight text-idf-navy">{t.name}</h2>
+						<p class="m-0 font-sans text-[15px] leading-[1.85] text-idf-ink/68">{t.bio}</p>
+						<div class="flex flex-wrap gap-2.5">
+							{t.tags.map((tag) => (
+								<span class="rounded-full bg-idf-blue-soft px-3.5 py-2 font-sans text-xs text-idf-navy">{tag}</span>
+							))}
+						</div>
+					</div>
+				</div>
+			))}
+		</section>
+
+		<section class="flex w-full justify-center px-6 pb-32">
+			<div class="flex w-full max-w-[1000px] flex-wrap items-center justify-between gap-10 rounded-[40px] bg-idf-navy p-14 max-[1000px]:p-8 max-[640px]:p-6">
+				<div class="flex max-w-[52ch] flex-col gap-3">
+					<h2 class="m-0 font-display text-[34px] leading-tight text-idf-cream">Conoce a tu profesor antes de inscribirte</h2>
+					<p class="m-0 font-sans text-[15px] leading-loose text-idf-cream/72">Puedes tomar una clase muestra de 45 minutos con el grupo que te interesa, sin compromiso.</p>
+				</div>
+				<a href="https://wa.me/523311223344?text=Quiero%20una%20clase%20muestra" target="_blank" rel="noopener noreferrer" class="rounded-full bg-idf-whatsapp px-7.5 py-4 font-sans text-base font-semibold whitespace-nowrap text-idf-whatsapp-ink no-underline transition-all duration-300 hover:-translate-y-px hover:shadow-[0_12px_30px_rgba(37,211,102,0.35)]">
+					Agendar clase muestra
+				</a>
+			</div>
+		</section>
+
+		<SiteFooter />
+		<WhatsAppFab />
+	</div>
+</Layout>

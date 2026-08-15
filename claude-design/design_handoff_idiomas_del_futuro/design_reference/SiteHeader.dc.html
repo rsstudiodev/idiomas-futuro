@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box}
+@font-face{font-family:'FiraSans';src:url('./public/fonts/FiraSans-Regular.ttf') format('truetype');font-weight:normal;font-style:normal;font-display:swap}
+@font-face{font-family:'NeueMachina';src:url('./public/fonts/NeueMachina-Regular.otf') format('opentype');font-weight:normal;font-style:normal;font-display:swap}
+@media (max-width:1000px){
+  [data-nav-links]{display:none !important}
+  [data-nav-menu]{display:inline-flex !important}
+}
+@media (max-width:520px){
+  [data-wordmark]{font-size:19px !important}
+  [data-nav-row]{padding-left:16px !important;padding-right:16px !important;height:68px !important}
+}
+</style>
+</helmet>
+<nav style="position:fixed;top:0;left:0;z-index:100;width:100%;backdrop-filter:blur(24px);background:rgba(250,246,236,0.82);border-bottom:1px solid rgba(20,52,92,0.10)">
+  <div data-nav-row="true" style="margin:0 auto;width:100%;max-width:1280px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 24px;height:80px">
+    <a href="./Home.dc.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0" title="Idiomas del Futuro">
+      <div style="position:relative;width:34px;height:34px;border-radius:11px;background:#14345c;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="display:block;width:14px;height:14px;border-radius:9999px;border:2px solid #faf6ec"></span><span style="position:absolute;right:5px;top:5px;width:7px;height:7px;background:#e0a35c;transform:rotate(45deg)"></span></div>
+      <span data-wordmark="true" style="font-family:'Instrument Serif',ui-serif,serif;font-size:23px;letter-spacing:-0.01em;color:#14345c;white-space:nowrap">Idiomas del Futuro</span>
+    </a>
+    <div data-nav-links="true" style="display:flex;align-items:center;gap:4px;min-width:0">
+      <a href="./Calendarios.dc.html" style="font-family:'FiraSans',sans-serif;font-size:14px;color:#14345c;text-decoration:none;padding:10px 14px;border-radius:9999px;white-space:nowrap;transition:all .3s" style-hover="background:rgba(44,95,158,0.08)">Próximos inicios</a>
+      <a href="./Profesores.dc.html" style="font-family:'FiraSans',sans-serif;font-size:14px;color:#14345c;text-decoration:none;padding:10px 14px;border-radius:9999px;white-space:nowrap;transition:all .3s" style-hover="background:rgba(44,95,158,0.08)">Profesores</a>
+      <a href="./Metodo.dc.html" style="font-family:'FiraSans',sans-serif;font-size:14px;color:#14345c;text-decoration:none;padding:10px 14px;border-radius:9999px;white-space:nowrap;transition:all .3s" style-hover="background:rgba(44,95,158,0.08)">Método</a>
+      <a href="https://wa.me/523311223344?text=%C2%A1Hola!%20Quiero%20reservar%20un%20lugar%20en%20Idiomas%20del%20Futuro" target="_blank" rel="noopener noreferrer" style="margin-left:8px;display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:9999px;background:#14345c;color:#faf6ec;text-decoration:none;font-family:'FiraSans',sans-serif;font-size:14px;white-space:nowrap;box-shadow:0 1px 2px rgba(28,26,22,.08);transition:all .3s" style-hover="background:#2c5f9e;box-shadow:0 8px 22px rgba(20,52,92,.18)">Reservar por WhatsApp</a>
+    </div>
+    <button data-nav-menu="true" type="button" onClick="{{ toggle }}" aria-label="Abrir menú" style="display:none;align-items:center;gap:10px;padding:11px 20px;border-radius:9999px;background:rgba(44,95,158,0.10);color:#14345c;border:none;cursor:pointer;font-family:'FiraSans',sans-serif;font-size:14px;flex-shrink:0;white-space:nowrap">Menú</button>
+  </div>
+</nav>
+<sc-if value="{{ isOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ close }}" style="position:fixed;inset:0;background:rgba(20,20,16,0.45);z-index:110"></div>
+  <aside style="position:fixed;top:0;right:0;height:100%;width:min(100%,380px);z-index:120;background:#faf6ec;border-left:1px solid rgba(20,52,92,0.12);box-shadow:-20px 0 60px rgba(20,52,92,.18);display:flex;flex-direction:column;gap:8px;padding:24px">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:20px;border-bottom:1px solid rgba(20,52,92,0.10)">
+      <span style="font-family:'FiraSans',sans-serif;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(20,52,92,0.5)">Menú</span>
+      <button type="button" onClick="{{ close }}" aria-label="Cerrar menú" style="padding:10px 18px;border-radius:9999px;background:rgba(44,95,158,0.10);color:#14345c;border:none;cursor:pointer;font-family:'FiraSans',sans-serif;font-size:14px">Cerrar</button>
+    </div>
+    <a href="./Calendarios.dc.html" style="padding:16px 12px;border-radius:18px;font-family:'Instrument Serif',ui-serif,serif;font-size:28px;color:#14345c;text-decoration:none" style-hover="background:rgba(44,95,158,0.08)">Próximos inicios</a>
+    <a href="./Profesores.dc.html" style="padding:16px 12px;border-radius:18px;font-family:'Instrument Serif',ui-serif,serif;font-size:28px;color:#14345c;text-decoration:none" style-hover="background:rgba(44,95,158,0.08)">Profesores</a>
+    <a href="./Metodo.dc.html" style="padding:16px 12px;border-radius:18px;font-family:'Instrument Serif',ui-serif,serif;font-size:28px;color:#14345c;text-decoration:none" style-hover="background:rgba(44,95,158,0.08)">Método</a>
+    <a href="./Home.dc.html#servicios" style="padding:16px 12px;border-radius:18px;font-family:'Instrument Serif',ui-serif,serif;font-size:28px;color:#14345c;text-decoration:none" style-hover="background:rgba(44,95,158,0.08)">Servicios</a>
+    <a href="./Home.dc.html#ubicacion" style="padding:16px 12px;border-radius:18px;font-family:'Instrument Serif',ui-serif,serif;font-size:28px;color:#14345c;text-decoration:none" style-hover="background:rgba(44,95,158,0.08)">Ubicación</a>
+    <a href="https://wa.me/523311223344?text=%C2%A1Hola!%20Quiero%20reservar%20un%20lugar%20en%20Idiomas%20del%20Futuro" target="_blank" rel="noopener noreferrer" style="margin-top:auto;display:inline-flex;align-items:center;justify-content:center;padding:16px 24px;border-radius:9999px;background:#25d366;color:#0b2d17;font-family:'FiraSans',sans-serif;font-size:16px;font-weight:600;text-decoration:none">Reservar por WhatsApp</a>
+  </aside>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:100}}">
+class Component extends DCLogic {
+  state = { isOpen: false };
+  renderVals() {
+    return {
+      isOpen: this.state.isOpen,
+      toggle: () => this.setState(s => ({ isOpen: !s.isOpen })),
+      close: () => this.setState({ isOpen: false }),
+    };
+  }
+}
+</script>
+</body>
+</html>
