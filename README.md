@@ -104,60 +104,7 @@ Global styles are loaded from `src/layouts/Layout.astro`:
 
 Use the `@/` import alias for files in `src`; for example, `@/components/Button`.
 
-## Internationalization
-
-Localization is provided by [`astro-react-i18next`](https://github.com/yassinedoghri/astro-react-i18next). The current configuration in `astro.config.mjs` supports these languages:
-
-| Locale | Language | URL behavior |
-| --- | --- | --- |
-| `es-MX` | Spanish (Mexico) | Default language; served without a locale prefix. |
-| `en-US` | English (United States) | Served with the `/en-US` prefix. |
-
-Translations are organized by locale and namespace in `public/locales`. The `common` namespace is configured for this project:
-
-```text
-public/locales/
-├── en-US/
-│   └── common.json
-└── es-MX/
-    └── common.json
-```
-
-Add matching keys to each language file. Then use the `i18next` instance in an Astro component:
-
-```astro
----
-import i18n from "i18next";
----
-
-<h1>{i18n.t("welcome-label")}</h1>
-```
-
-### Adding a language
-
-1. Add the locale code to `locales` in the `reactI18next()` integration in `astro.config.mjs`.
-2. Create `public/locales/<locale>/common.json` and provide every translation key used by the site.
-3. Run a production build to generate and check the new localized route.
-
-For example, adding French (`fr-FR`) requires both `locales: ["en-US", "es-MX", "fr-FR"]` and `public/locales/fr-FR/common.json`.
-
-### Localized static routes
-
-Localized pages live under `src/pages/[...locale]/`. The catch-all route lets Astro handle both the default route (such as `/`) and locale-prefixed routes (such as `/en-US`). Put additional localized pages in the same directory; `src/pages/[...locale]/about.astro`, for example, creates localized versions of the About page.
-
-This project uses static site generation, so each localized route exports `getStaticPaths()`:
-
-```astro
----
-import { buildStaticPaths } from "astro-react-i18next/utils";
-
-export function getStaticPaths() {
-  return buildStaticPaths();
-}
----
-```
-
-`buildStaticPaths()` reads the configured locales and gives Astro a path for each one at build time. This is why localized pages are generated in the production output without manually listing each language.
+This site is Spanish-only. Pages live directly under `src/pages/` with no locale prefix or routing.
 
 ## Included integrations
 
@@ -165,7 +112,6 @@ export function getStaticPaths() {
 - [Tailwind CSS](https://tailwindcss.com/) v4 for utility-first styling
 - [Sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/) for generated sitemap support
 - [Partytown](https://docs.astro.build/en/guides/integrations-guide/partytown/) for moving supported third-party scripts off the main thread
-- [`astro-react-i18next`](https://github.com/yassinedoghri/astro-react-i18next) for localization with React
 
 ## Documentation
 

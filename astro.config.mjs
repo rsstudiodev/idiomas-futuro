@@ -8,8 +8,6 @@ import sitemap from "@astrojs/sitemap";
 
 import partytown from "@astrojs/partytown";
 
-import reactI18next from 'astro-react-i18next';
-
 import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
@@ -18,11 +16,6 @@ export default defineConfig({
   base: '/idiomas-futuro',
   integrations: [react(), sitemap(), partytown(),
 
-  reactI18next({
-    defaultLocale: "es-MX",
-    locales: ["en-US", "es-MX"],
-    namespaces: ['common']
-  }),
   ],
 
   vite: {

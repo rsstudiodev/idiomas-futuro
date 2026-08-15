@@ -3,12 +3,6 @@ import Layout from "@/layouts/Layout.astro";
 import SiteHeader from "@/components/SiteHeader.astro";
 import SiteFooter from "@/components/SiteFooter.astro";
 import WhatsAppFab from "@/components/WhatsAppFab.astro";
-import { buildStaticPaths } from "astro-react-i18next/utils";
-
-export function getStaticPaths() {
-	return buildStaticPaths();
-}
-
 const waPromo = "https://wa.me/523311223344?text=Quiero%20la%20promoci%C3%B3n%20de%20agosto";
 const waVisita = "https://wa.me/523311223344?text=Quiero%20agendar%20una%20visita";
 

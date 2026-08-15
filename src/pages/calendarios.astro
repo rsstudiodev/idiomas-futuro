@@ -3,12 +3,6 @@ import Layout from "@/layouts/Layout.astro";
 import SiteHeader from "@/components/SiteHeader.astro";
 import SiteFooter from "@/components/SiteFooter.astro";
 import WhatsAppFab from "@/components/WhatsAppFab.astro";
-import { buildStaticPaths } from "astro-react-i18next/utils";
-
-export function getStaticPaths() {
-	return buildStaticPaths();
-}
-
 type Row = { level: string; schedule: string; start: string; seats: string; seatStyle: "amber" | "blue" | "muted"; cta: string; href: string };
 
 const ingles: Row[] = [

@@ -3,12 +3,6 @@ import Layout from "@/layouts/Layout.astro";
 import SiteHeader from "@/components/SiteHeader.astro";
 import SiteFooter from "@/components/SiteFooter.astro";
 import WhatsAppFab from "@/components/WhatsAppFab.astro";
-import { buildStaticPaths } from "astro-react-i18next/utils";
-
-export function getStaticPaths() {
-	return buildStaticPaths();
-}
-
 const stats = [
 	{ value: "70%", desc: "del tiempo de clase lo pasas hablando o escribiendo tú, no escuchando al profesor." },
 	{ value: "8", desc: "personas como máximo por grupo, para que cada quien tenga turno en cada actividad." },
