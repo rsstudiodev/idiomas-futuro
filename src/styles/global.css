@@ -12,8 +12,8 @@
 	--color-idf-whatsapp: #25d366;
 	--color-idf-whatsapp-ink: #0b2d17;
 
-	--font-display: "Bodoni Moda", ui-serif, Georgia, serif;
-	--font-sans: "Work Sans", ui-sans-serif, system-ui, sans-serif;
+	--font-display: "Libre Caslon Display", ui-serif, Georgia, serif;
+	--font-sans: "Karla", ui-sans-serif, system-ui, sans-serif;
 
 	--animate-idf-marquee: idf-marquee 46s linear infinite;
 
@@ -95,5 +95,24 @@ body {
 		animation: none !important;
 		opacity: 1 !important;
 		transform: none !important;
+	}
+}
+
+.idf-reveal {
+	opacity: 0;
+	transform: translateY(28px);
+	transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.idf-reveal.is-visible {
+	opacity: 1;
+	transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.idf-reveal {
+		opacity: 1;
+		transform: none;
+		transition: none;
 	}
 }

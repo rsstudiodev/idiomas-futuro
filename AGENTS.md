@@ -8,6 +8,10 @@ astro dev --background
 
 Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
 
+## Icons
+
+`@lucide/astro` is installed. Prefer Lucide icon components over inline SVG glyphs or hand-drawn icon markup.
+
 ## Documentation
 
 Full documentation: https://docs.astro.build

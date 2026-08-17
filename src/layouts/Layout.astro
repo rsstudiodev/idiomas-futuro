@@ -28,12 +28,34 @@ const { title = "Idiomas del Futuro" } = Astro.props;
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Work+Sans:wght@300;400;500;600&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Karla:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap"
 			rel="stylesheet"
 		/>
 		<title>{title}</title>
 	</head>
 	<body class="bg-idf-cream text-idf-ink">
 		<slot />
+		<script is:inline>
+			(function () {
+				if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+				var targets = document.querySelectorAll("body > div > section:not(:first-of-type), body > div > footer");
+				if (!targets.length) return;
+				var observer = new IntersectionObserver(
+					function (entries) {
+						entries.forEach(function (entry) {
+							if (entry.isIntersecting) {
+								entry.target.classList.add("is-visible");
+								observer.unobserve(entry.target);
+							}
+						});
+					},
+					{ threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+				);
+				targets.forEach(function (el) {
+					el.classList.add("idf-reveal");
+					observer.observe(el);
+				});
+			})();
+		</script>
 	</body>
 </html>

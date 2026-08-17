@@ -1,8 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import SiteHeader from "@/components/SiteHeader.astro";
+import FloatingDock from "@/components/FloatingDock.astro";
 import SiteFooter from "@/components/SiteFooter.astro";
-import WhatsAppFab from "@/components/WhatsAppFab.astro";
 const stats = [
 	{ value: "70%", desc: "del tiempo de clase lo pasas hablando o escribiendo tú, no escuchando al profesor." },
 	{ value: "8", desc: "personas como máximo por grupo, para que cada quien tenga turno en cada actividad." },
@@ -25,10 +24,8 @@ const notDone = [
 ---
 
 <Layout title="Nuestro método — Idiomas del Futuro">
-	<div class="w-full overflow-x-hidden bg-idf-cream text-idf-ink">
-		<SiteHeader />
-
-		<section class="relative flex w-full flex-col items-center overflow-hidden px-6 pt-[200px] pb-24 text-center max-[640px]:pt-[130px]">
+	<div class="w-full overflow-x-hidden bg-idf-cream pb-24 text-idf-ink">
+		<section class="relative flex w-full flex-col items-center overflow-hidden px-6 pt-[128px] pb-24 text-center max-[640px]:pt-[88px]">
 			<div class="absolute inset-0 bg-[radial-gradient(110%_80%_at_50%_-20%,#c5d8f0_0%,#dfe9f4_34%,#f1efe6_64%,#faf6ec_88%)]"></div>
 			<div class="relative flex max-w-[840px] flex-col items-center gap-6">
 				<div class="mb-2 flex flex-col items-center gap-4">
@@ -110,6 +107,6 @@ const notDone = [
 		</section>
 
 		<SiteFooter />
-		<WhatsAppFab />
+		<FloatingDock />
 	</div>
 </Layout>
