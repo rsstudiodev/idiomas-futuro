@@ -2,6 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import FloatingDock from "@/components/FloatingDock.astro";
 import SiteFooter from "@/components/SiteFooter.astro";
+import { waHref } from "@/config/whatsapp";
 const teachers = [
 	{
 		eyebrow: "Coordinadora académica · Inglés",
@@ -83,7 +84,7 @@ const teachers = [
 					<h2 class="m-0 font-display text-[34px] leading-tight text-idf-cream">Conoce a tu profesor antes de inscribirte</h2>
 					<p class="m-0 font-sans text-[15px] leading-loose text-idf-cream/72">Puedes tomar una clase muestra de 45 minutos con el grupo que te interesa, sin compromiso.</p>
 				</div>
-				<a href="https://wa.me/523311223344?text=Quiero%20una%20clase%20muestra" target="_blank" rel="noopener noreferrer" class="rounded-full bg-idf-whatsapp px-7.5 py-4 font-sans text-base font-semibold whitespace-nowrap text-idf-whatsapp-ink no-underline transition-all duration-300 hover:-translate-y-px hover:shadow-[0_12px_30px_rgba(37,211,102,0.35)]">
+				<a href={waHref} target="_blank" rel="noopener noreferrer" class="rounded-full bg-idf-whatsapp px-7.5 py-4 font-sans text-base font-semibold whitespace-nowrap text-idf-whatsapp-ink no-underline transition-all duration-300 hover:-translate-y-px hover:shadow-[0_12px_30px_rgba(37,211,102,0.35)]">
 					Agendar clase muestra
 				</a>
 			</div>

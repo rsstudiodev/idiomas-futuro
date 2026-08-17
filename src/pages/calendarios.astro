@@ -2,29 +2,30 @@
 import Layout from "@/layouts/Layout.astro";
 import FloatingDock from "@/components/FloatingDock.astro";
 import SiteFooter from "@/components/SiteFooter.astro";
+import { waHref } from "@/config/whatsapp";
 type Row = { level: string; schedule: string; start: string; seats: string; seatStyle: "amber" | "blue" | "muted"; cta: string; href: string };
 
 const ingles: Row[] = [
-	{ level: "A1 Básico", schedule: "Lun y Mié · 19:00–21:00", start: "3 sep 2026", seats: "6 lugares", seatStyle: "amber", cta: "Apartar lugar", href: "https://wa.me/523311223344?text=Quiero%20apartar%20Ingl%C3%A9s%20A1%20del%203%20de%20septiembre" },
-	{ level: "A1 Básico matutino", schedule: "Mar y Jue · 7:00–9:00", start: "8 sep 2026", seats: "8 lugares", seatStyle: "blue", cta: "Apartar lugar", href: "https://wa.me/523311223344?text=Quiero%20apartar%20Ingl%C3%A9s%20A1%20matutino" },
-	{ level: "A2 Elemental", schedule: "Lun y Mié · 17:00–19:00", start: "15 sep 2026", seats: "3 lugares", seatStyle: "amber", cta: "Apartar lugar", href: "https://wa.me/523311223344?text=Quiero%20apartar%20Ingl%C3%A9s%20A2" },
-	{ level: "B1 Intermedio", schedule: "Mar y Jue · 19:00–21:00", start: "22 sep 2026", seats: "5 lugares", seatStyle: "blue", cta: "Apartar lugar", href: "https://wa.me/523311223344?text=Quiero%20apartar%20Ingl%C3%A9s%20B1" },
-	{ level: "B2 Avanzado", schedule: "Sáb · 9:00–13:00", start: "3 oct 2026", seats: "Lista de espera", seatStyle: "muted", cta: "Anotarme", href: "https://wa.me/523311223344?text=Quiero%20entrar%20a%20la%20lista%20de%20espera%20de%20Ingl%C3%A9s%20B2" },
-	{ level: "C1 Dominio", schedule: "Vie · 18:00–21:00", start: "9 oct 2026", seats: "7 lugares", seatStyle: "blue", cta: "Apartar lugar", href: "https://wa.me/523311223344?text=Quiero%20apartar%20Ingl%C3%A9s%20C1" },
+	{ level: "A1 Básico", schedule: "Lun y Mié · 19:00–21:00", start: "3 sep 2026", seats: "6 lugares", seatStyle: "amber", cta: "Apartar lugar", href: waHref },
+	{ level: "A1 Básico matutino", schedule: "Mar y Jue · 7:00–9:00", start: "8 sep 2026", seats: "8 lugares", seatStyle: "blue", cta: "Apartar lugar", href: waHref },
+	{ level: "A2 Elemental", schedule: "Lun y Mié · 17:00–19:00", start: "15 sep 2026", seats: "3 lugares", seatStyle: "amber", cta: "Apartar lugar", href: waHref },
+	{ level: "B1 Intermedio", schedule: "Mar y Jue · 19:00–21:00", start: "22 sep 2026", seats: "5 lugares", seatStyle: "blue", cta: "Apartar lugar", href: waHref },
+	{ level: "B2 Avanzado", schedule: "Sáb · 9:00–13:00", start: "3 oct 2026", seats: "Lista de espera", seatStyle: "muted", cta: "Anotarme", href: waHref },
+	{ level: "C1 Dominio", schedule: "Vie · 18:00–21:00", start: "9 oct 2026", seats: "7 lugares", seatStyle: "blue", cta: "Apartar lugar", href: waHref },
 ];
 
 const portugues: Row[] = [
-	{ level: "A1 Iniciación", schedule: "Mar y Jue · 20:00–21:30", start: "5 sep 2026", seats: "8 lugares", seatStyle: "blue", cta: "Apartar lugar", href: "https://wa.me/523311223344?text=Quiero%20apartar%20Portugu%C3%A9s%20A1" },
-	{ level: "A2 Elemental", schedule: "Sáb · 10:00–13:00", start: "12 sep 2026", seats: "4 lugares", seatStyle: "amber", cta: "Apartar lugar", href: "https://wa.me/523311223344?text=Quiero%20apartar%20Portugu%C3%A9s%20A2" },
-	{ level: "B1 Conversacional", schedule: "Lun y Mié · 20:00–21:30", start: "28 sep 2026", seats: "6 lugares", seatStyle: "blue", cta: "Apartar lugar", href: "https://wa.me/523311223344?text=Quiero%20apartar%20Portugu%C3%A9s%20B1" },
-	{ level: "B2 Negocios", schedule: "Vie · 18:00–21:00", start: "16 oct 2026", seats: "8 lugares", seatStyle: "blue", cta: "Apartar lugar", href: "https://wa.me/523311223344?text=Quiero%20apartar%20Portugu%C3%A9s%20B2" },
+	{ level: "A1 Iniciación", schedule: "Mar y Jue · 20:00–21:30", start: "5 sep 2026", seats: "8 lugares", seatStyle: "blue", cta: "Apartar lugar", href: waHref },
+	{ level: "A2 Elemental", schedule: "Sáb · 10:00–13:00", start: "12 sep 2026", seats: "4 lugares", seatStyle: "amber", cta: "Apartar lugar", href: waHref },
+	{ level: "B1 Conversacional", schedule: "Lun y Mié · 20:00–21:30", start: "28 sep 2026", seats: "6 lugares", seatStyle: "blue", cta: "Apartar lugar", href: waHref },
+	{ level: "B2 Negocios", schedule: "Vie · 18:00–21:00", start: "16 oct 2026", seats: "8 lugares", seatStyle: "blue", cta: "Apartar lugar", href: waHref },
 ];
 
 const chino: Row[] = [
-	{ level: "HSK 1", schedule: "Mar y Jue · 18:00–20:00", start: "22 sep 2026", seats: "8 lugares", seatStyle: "blue", cta: "Apartar lugar", href: "https://wa.me/523311223344?text=Quiero%20apartar%20Chino%20HSK%201" },
-	{ level: "HSK 2", schedule: "Sáb · 9:00–12:00", start: "10 oct 2026", seats: "5 lugares", seatStyle: "amber", cta: "Apartar lugar", href: "https://wa.me/523311223344?text=Quiero%20apartar%20Chino%20HSK%202" },
-	{ level: "HSK 3", schedule: "Lun y Mié · 18:00–20:00", start: "2 nov 2026", seats: "6 lugares", seatStyle: "blue", cta: "Apartar lugar", href: "https://wa.me/523311223344?text=Quiero%20apartar%20Chino%20HSK%203" },
-	{ level: "HSK 4", schedule: "Vie · 17:30–20:30", start: "Enero 2027", seats: "Próximamente", seatStyle: "muted", cta: "Avisarme", href: "https://wa.me/523311223344?text=Av%C3%ADsenme%20cuando%20abra%20HSK%204" },
+	{ level: "HSK 1", schedule: "Mar y Jue · 18:00–20:00", start: "22 sep 2026", seats: "8 lugares", seatStyle: "blue", cta: "Apartar lugar", href: waHref },
+	{ level: "HSK 2", schedule: "Sáb · 9:00–12:00", start: "10 oct 2026", seats: "5 lugares", seatStyle: "amber", cta: "Apartar lugar", href: waHref },
+	{ level: "HSK 3", schedule: "Lun y Mié · 18:00–20:00", start: "2 nov 2026", seats: "6 lugares", seatStyle: "blue", cta: "Apartar lugar", href: waHref },
+	{ level: "HSK 4", schedule: "Vie · 17:30–20:30", start: "Enero 2027", seats: "Próximamente", seatStyle: "muted", cta: "Avisarme", href: waHref },
 ];
 
 const seatClasses: Record<Row["seatStyle"], string> = {
@@ -99,7 +100,7 @@ const groups = [
 					<h2 class="m-0 font-display text-[34px] leading-tight text-idf-cream">¿No sabes qué nivel te toca?</h2>
 					<p class="m-0 font-sans text-[15px] leading-loose text-idf-cream/72">Te aplicamos un examen de ubicación de 15 minutos sin costo, presencial o en línea.</p>
 				</div>
-				<a href="https://wa.me/523311223344?text=Quiero%20mi%20examen%20de%20ubicaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="rounded-full bg-idf-whatsapp px-7.5 py-4 font-sans text-base font-semibold whitespace-nowrap text-idf-whatsapp-ink no-underline transition-all duration-300 hover:-translate-y-px hover:shadow-[0_12px_30px_rgba(37,211,102,0.35)]">
+				<a href={waHref} target="_blank" rel="noopener noreferrer" class="rounded-full bg-idf-whatsapp px-7.5 py-4 font-sans text-base font-semibold whitespace-nowrap text-idf-whatsapp-ink no-underline transition-all duration-300 hover:-translate-y-px hover:shadow-[0_12px_30px_rgba(37,211,102,0.35)]">
 					Agendar examen gratis
 				</a>
 			</div>

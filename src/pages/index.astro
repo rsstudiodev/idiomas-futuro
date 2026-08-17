@@ -2,8 +2,9 @@
 import Layout from "@/layouts/Layout.astro";
 import FloatingDock from "@/components/FloatingDock.astro";
 import SiteFooter from "@/components/SiteFooter.astro";
-const waPromo = "https://wa.me/523311223344?text=Quiero%20la%20promoci%C3%B3n%20de%20agosto";
-const waVisita = "https://wa.me/523311223344?text=Quiero%20agendar%20una%20visita";
+import { waHref } from "@/config/whatsapp";
+const waPromo = waHref;
+const waVisita = waHref;
 
 const services = [
 	{

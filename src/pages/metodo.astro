@@ -2,6 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import FloatingDock from "@/components/FloatingDock.astro";
 import SiteFooter from "@/components/SiteFooter.astro";
+import { waHref } from "@/config/whatsapp";
 const stats = [
 	{ value: "70%", desc: "del tiempo de clase lo pasas hablando o escribiendo tú, no escuchando al profesor." },
 	{ value: "8", desc: "personas como máximo por grupo, para que cada quien tenga turno en cada actividad." },
@@ -96,7 +97,7 @@ const notDone = [
 					<p class="m-0 font-sans text-[15px] leading-loose text-idf-cream/72">Entra a una sesión real de 45 minutos y decide después. También puedes revisar los próximos inicios.</p>
 				</div>
 				<div class="flex flex-wrap gap-3">
-					<a href="https://wa.me/523311223344?text=Quiero%20una%20clase%20muestra" target="_blank" rel="noopener noreferrer" class="rounded-full bg-idf-whatsapp px-7 py-4 font-sans text-[15px] font-semibold whitespace-nowrap text-idf-whatsapp-ink no-underline">
+					<a href={waHref} target="_blank" rel="noopener noreferrer" class="rounded-full bg-idf-whatsapp px-7 py-4 font-sans text-[15px] font-semibold whitespace-nowrap text-idf-whatsapp-ink no-underline">
 						Agendar por WhatsApp
 					</a>
 					<a href={`/calendarios`} class="rounded-full border border-idf-cream/30 bg-idf-cream/12 px-7 py-4 font-sans text-[15px] whitespace-nowrap text-idf-cream no-underline">

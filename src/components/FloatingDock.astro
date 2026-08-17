@@ -1,7 +1,6 @@
 ---
 import { CalendarDays, GraduationCap, BarChart3 } from "@lucide/astro";
-
-const waHref = "https://wa.me/523311223344?text=%C2%A1Hola!%20Quiero%20reservar%20un%20lugar%20en%20Idiomas%20del%20Futuro";
+import { waHref } from "@/config/whatsapp";
 
 const navLinks = [
 	{ href: `/calendarios`, label: "Próximos inicios", icon: CalendarDays },
@@ -11,7 +10,10 @@ const navLinks = [
 
 const itemClass =
 	"flex items-center gap-2 whitespace-nowrap rounded-2xl px-3.5 py-2.5 font-sans text-[15px] text-idf-cream no-underline transition-all duration-300 hover:bg-idf-cream/16 md:rounded-[19px] md:px-5.5 md:py-3.75 md:text-base";
+const activeItemClass = "bg-idf-cream/16";
 const iconClass = "size-[25px] shrink-0 md:size-5.5";
+
+const currentPath = Astro.url.pathname.replace(/\/+$/, "") || "/";
 ---
 
 <div class="pointer-events-none fixed bottom-[22px] left-1/2 z-120 flex -translate-x-1/2 justify-center max-[720px]:right-3 max-[720px]:left-3 max-[720px]:translate-x-0 md:bottom-7">
@@ -28,7 +30,11 @@ const iconClass = "size-[25px] shrink-0 md:size-5.5";
 		</a>
 
 		{navLinks.map((link) => (
-			<a href={link.href} class={itemClass}>
+			<a
+				href={link.href}
+				aria-current={currentPath === link.href ? "page" : undefined}
+				class={`${itemClass} ${currentPath === link.href ? activeItemClass : ""}`}
+			>
 				<link.icon class={iconClass} stroke-width={1.7} />
 				<span class="hidden md:inline">{link.label}</span>
 			</a>
