@@ -8,15 +8,19 @@ import sitemap from "@astrojs/sitemap";
 
 import partytown from "@astrojs/partytown";
 
+import cloudflare from '@astrojs/cloudflare';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://rsstudiodev.github.io',
-  base: '/idiomas-futuro',
+
   integrations: [react(), sitemap(), partytown(),
 
   ],
 
   vite: {
     plugins: [tailwindcss()]
-  }
+  },
+
+  adapter: cloudflare()
 });
