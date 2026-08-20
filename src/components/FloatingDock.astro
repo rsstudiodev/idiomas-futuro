@@ -9,24 +9,24 @@ const navLinks = [
 ];
 
 const itemClass =
-	"flex items-center gap-2 whitespace-nowrap rounded-2xl px-3.5 py-2.5 font-sans text-[15px] text-idf-cream no-underline transition-all duration-300 hover:bg-idf-cream/16 md:rounded-[19px] md:px-5.5 md:py-3.75 md:text-base";
-const activeItemClass = "bg-idf-cream/16";
-const iconClass = "size-[25px] shrink-0 md:size-5.5";
+	"flex items-center gap-2 whitespace-nowrap rounded-full px-3.5 py-2.5 text-[14px] text-white/72 no-underline transition-all duration-300 hover:bg-white/10 hover:text-white md:px-5 md:py-3";
+const activeItemClass = "bg-white/12 text-white";
+const iconClass = "size-[22px] shrink-0 md:size-4.5";
 
 const currentPath = Astro.url.pathname.replace(/\/+$/, "") || "/";
 ---
 
 <div class="pointer-events-none fixed bottom-[22px] left-1/2 z-120 flex -translate-x-1/2 justify-center max-[720px]:right-3 max-[720px]:left-3 max-[720px]:translate-x-0 md:bottom-7">
 	<nav
-		class="pointer-events-auto flex items-center gap-1 rounded-[22px] border border-idf-cream/22 bg-idf-navy/70 p-1.5 shadow-[0_22px_54px_rgba(20,52,92,0.34),inset_0_1px_0_rgba(255,255,255,0.16)] backdrop-blur-2xl backdrop-saturate-150 max-[720px]:w-full max-[720px]:justify-between max-[720px]:gap-2.5 md:gap-1.5 md:rounded-[26px] md:p-2.75"
+		class="pointer-events-auto flex items-center gap-1 rounded-full border border-white/12 bg-idf-navy/82 p-1.5 shadow-[0_22px_54px_rgba(7,26,15,0.42),inset_0_1px_0_rgba(255,255,255,0.14)] backdrop-blur-2xl backdrop-saturate-150 max-[720px]:w-full max-[720px]:justify-between max-[720px]:gap-2 md:gap-1.5 md:p-2"
 	>
 		<a
 			href={``}
 			title="Idiomas del Futuro"
-			class="relative flex size-11 shrink-0 items-center justify-center rounded-2xl border-2 border-idf-navy bg-idf-cream transition-all duration-300 hover:bg-white md:size-13.5 md:rounded-[19px]"
+			class="relative flex size-10 shrink-0 items-center justify-center rounded-full bg-idf-lime transition-all duration-300 hover:bg-white md:size-11"
 		>
-			<span class="block h-4.5 w-4.5 rounded-full border-2 border-idf-navy md:h-5.5 md:w-5.5"></span>
-			<span class="absolute top-2 right-2 h-2.5 w-2.5 rotate-45 bg-idf-amber md:top-2.5 md:right-2.5 md:h-3 md:w-3"></span>
+			<span class="block h-4 w-4 rounded-full border-2 border-idf-navy md:h-4.5 md:w-4.5"></span>
+			<span class="absolute top-2 right-2 h-2 w-2 rotate-45 bg-idf-navy md:top-2.5 md:right-2.5 md:h-2.5 md:w-2.5"></span>
 		</a>
 
 		{navLinks.map((link) => (
@@ -44,7 +44,7 @@ const currentPath = Astro.url.pathname.replace(/\/+$/, "") || "/";
 			href={waHref}
 			target="_blank"
 			rel="noopener noreferrer"
-			class="flex items-center gap-2 whitespace-nowrap rounded-2xl bg-idf-cream px-3.5 py-2.5 font-sans text-[15px] font-semibold text-idf-navy no-underline transition-all duration-300 hover:bg-white md:rounded-[19px] md:px-5.5 md:py-3.75 md:text-base"
+			class="flex items-center gap-2 whitespace-nowrap rounded-full bg-white px-3.5 py-2.5 text-[14px] font-medium text-idf-navy no-underline transition-all duration-300 hover:bg-idf-lime md:px-5 md:py-3"
 		>
 			<svg class={iconClass} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
 				<path

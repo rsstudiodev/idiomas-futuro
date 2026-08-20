@@ -13,44 +13,44 @@ const exploreLinks = [
 ];
 ---
 
-<footer class="w-full border-t border-idf-navy/10 bg-idf-cream-light">
-	<div class="mx-auto grid w-full max-w-6xl grid-cols-[repeat(auto-fit,minmax(190px,1fr))] gap-10 px-6 pt-20 pb-10">
+<footer class="mx-auto w-[calc(100%-48px)] max-w-[1248px] rounded-[32px] bg-idf-navy max-[640px]:w-[calc(100%-24px)]">
+	<div class="grid w-full grid-cols-[repeat(auto-fit,minmax(190px,1fr))] gap-10 px-12 pt-16 pb-10 max-[640px]:px-6">
 		<div class="flex flex-col gap-6">
 			<div class="flex items-center gap-3.5">
-				<div class="relative flex h-11.5 w-11.5 shrink-0 items-center justify-center rounded-[15px] bg-idf-navy">
-					<span class="block h-4.5 w-4.5 rounded-full border-3 border-idf-cream"></span>
-					<span class="absolute top-1.75 right-1.75 h-2.25 w-2.25 rotate-45 bg-idf-amber"></span>
+				<div class="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-[14px] bg-idf-lime">
+					<span class="block h-4.5 w-4.5 rounded-full border-[3px] border-idf-navy"></span>
+					<span class="absolute top-2 right-2 h-2.25 w-2.25 rotate-45 bg-idf-navy"></span>
 				</div>
-				<span class="font-display text-[28px] tracking-tight text-idf-navy">Idiomas del Futuro</span>
+				<span class="font-display text-[22px] text-white">Idiomas del Futuro</span>
 			</div>
-			<p class="max-w-[32ch] font-sans text-[13px] leading-relaxed text-idf-ink/62">
+			<p class="max-w-[32ch] text-[13px] leading-[1.7] text-white/50">
 				Escuela de idiomas con grupos reducidos y práctica conversacional desde la primera clase. Inglés, portugués y chino mandarín.
 			</p>
 			<div class="flex flex-col gap-2.5">
-				<span class="font-sans text-[13px] text-idf-ink/62">Av. de los Idiomas 128, Col. El Mirador, Guadalajara, Jal.</span>
-				<a href="tel:+523311223344" class="font-sans text-[13px] text-idf-blue no-underline hover:text-idf-navy">33 1122 3344</a>
+				<span class="text-[13px] text-white/50">Av. de los Idiomas 128, Col. El Mirador, Guadalajara, Jal.</span>
+				<a href="tel:+523311223344" class="text-[13px] text-idf-lime no-underline hover:text-white">33 1122 3344</a>
 			</div>
 		</div>
 		<div class="flex flex-col gap-4">
-			<h3 class="m-0 font-sans text-[11px] font-semibold tracking-[0.16em] text-idf-navy/50 uppercase">Cursos</h3>
+			<h3 class="m-0 text-[10px] font-semibold tracking-[0.16em] text-white/35 uppercase">Cursos</h3>
 			{courseLinks.map((l) => (
-				<a href={l.href} class="font-sans text-[13px] text-idf-ink/70 no-underline hover:text-idf-navy">{l.label}</a>
+				<a href={l.href} class="text-[13px] text-white/60 no-underline transition-colors hover:text-idf-lime">{l.label}</a>
 			))}
 		</div>
 		<div class="flex flex-col gap-4">
-			<h3 class="m-0 font-sans text-[11px] font-semibold tracking-[0.16em] text-idf-navy/50 uppercase">Explorar</h3>
+			<h3 class="m-0 text-[10px] font-semibold tracking-[0.16em] text-white/35 uppercase">Explorar</h3>
 			{exploreLinks.map((l) => (
-				<a href={l.href} class="font-sans text-[13px] text-idf-ink/70 no-underline hover:text-idf-navy">{l.label}</a>
+				<a href={l.href} class="text-[13px] text-white/60 no-underline transition-colors hover:text-idf-lime">{l.label}</a>
 			))}
 		</div>
 		<div class="flex flex-col gap-4">
-			<h3 class="m-0 font-sans text-[11px] font-semibold tracking-[0.16em] text-idf-navy/50 uppercase">Síguenos</h3>
-			<a href={`#instagram`} class="font-sans text-[13px] text-idf-ink/70 no-underline hover:text-idf-navy">@idiomasdelfuturo</a>
-			<span class="font-sans text-[13px] text-idf-ink/45">Lun a Sáb · 7:00 – 21:00</span>
+			<h3 class="m-0 text-[10px] font-semibold tracking-[0.16em] text-white/35 uppercase">Síguenos</h3>
+			<a href={`#instagram`} class="text-[13px] text-white/60 no-underline transition-colors hover:text-idf-lime">@idiomasdelfuturo</a>
+			<span class="text-[13px] text-white/40">Lun a Sáb · 7:00 – 21:00</span>
 		</div>
 	</div>
-	<div class="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4 border-t border-idf-navy/10 px-6 pt-6 pb-12">
-		<span class="font-sans text-[11px] text-idf-ink/45">© 2026 Idiomas del Futuro · Demo ficticio, datos y reseñas de muestra</span>
-		<span class="font-sans text-[11px] tracking-[0.14em] text-idf-navy/45 uppercase">Guadalajara, México</span>
+	<div class="flex w-full flex-wrap items-center justify-between gap-4 border-t border-white/10 px-12 pt-6 pb-10 max-[640px]:px-6">
+		<span class="text-[11px] text-white/35">© 2026 Idiomas del Futuro · Demo ficticio, datos y reseñas de muestra</span>
+		<span class="text-[11px] tracking-[0.14em] text-white/35 uppercase">Guadalajara, México</span>
 	</div>
 </footer>
