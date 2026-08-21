@@ -115,8 +115,6 @@ const reviews = [
 ];
 const marqueeReviews = [...reviews, ...reviews];
 
-const heroChecks = ["Grupos de máximo 8", "Profesores certificados", "Horarios flexibles"];
-
 const partners = [
 	{ name: "CELPE Norte", icon: Layers },
 	{ name: "Instituto Yuán", icon: Compass },
@@ -162,11 +160,6 @@ const methodRows = [
 					</div>
 				</div>
 
-				<p class="hero-motion m-0 flex items-center gap-2.5 text-[13px] text-white/60 opacity-0 [animation:idf-hero-reveal_0.6s_ease-out_1.4s_forwards]">
-					<span class="inline-block size-1.5 shrink-0 rounded-full bg-idf-lime"></span>
-					Agosto: inscripción sin costo y examen de nivel gratis
-				</p>
-
 				<h1 class="hero-motion m-0 text-balance font-display text-[clamp(40px,5.6vw,72px)] leading-[1.06] text-white opacity-0 [animation:idf-hero-reveal_0.7s_ease-out_1.55s_forwards]">
 					Aprende el idioma<br />que abre tu futuro
 				</h1>
@@ -183,14 +176,6 @@ const methodRows = [
 					</a>
 				</div>
 
-				<div class="hero-motion flex flex-wrap justify-center gap-x-8 gap-y-3 opacity-0 [animation:idf-hero-reveal_0.7s_ease-out_1.92s_forwards]">
-					{heroChecks.map((c) => (
-						<span class="flex items-center gap-2 text-[13px] text-white/70">
-							<Check class="size-4 text-idf-lime" stroke-width={2.4} />
-							{c}
-						</span>
-					))}
-				</div>
 			</div>
 
 			<!-- Tarjetas flotantes -->
