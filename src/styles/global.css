@@ -132,13 +132,62 @@ body {
 	background-size: 620px 620px, 480px 480px, 540px 540px, 700px 700px, 520px 520px, 660px 660px, 580px 580px, 500px 500px, 640px 640px, 560px 560px;
 }
 
+/* Hero: serif accent for the headline */
+.idf-hero-serif {
+	font-family: "Instrument Serif", ui-serif, Georgia, serif;
+	font-style: italic;
+	font-weight: 400;
+	letter-spacing: -0.01em;
+}
+
+/* Hero: slow aurora wash behind the copy */
+.idf-hero-aurora {
+	background-image: radial-gradient(52% 44% at 22% 18%, rgba(168, 224, 95, 0.2), transparent 68%),
+		radial-gradient(46% 40% at 78% 12%, rgba(64, 176, 118, 0.22), transparent 70%),
+		radial-gradient(60% 46% at 60% 88%, rgba(29, 107, 58, 0.28), transparent 72%);
+	animation: idf-hero-aurora 22s ease-in-out infinite alternate;
+}
+
+/* Hero: faint measuring grid */
+.idf-hero-grid {
+	background-image: linear-gradient(to right, rgba(255, 255, 255, 0.14) 1px, transparent 1px),
+		linear-gradient(to bottom, rgba(255, 255, 255, 0.14) 1px, transparent 1px);
+	background-size: 62px 62px;
+}
+
+.idf-hero-orb {
+	animation: idf-hero-orb 16s ease-in-out infinite alternate;
+}
+
+@keyframes idf-hero-aurora {
+	from {
+		transform: translate3d(-2%, -1%, 0) scale(1);
+	}
+	to {
+		transform: translate3d(3%, 2%, 0) scale(1.08);
+	}
+}
+
+@keyframes idf-hero-orb {
+	from {
+		transform: translate3d(0, 0, 0) scale(1);
+		opacity: 0.75;
+	}
+	to {
+		transform: translate3d(-3%, 4%, 0) scale(1.12);
+		opacity: 1;
+	}
+}
+
 @media (prefers-reduced-motion: reduce) {
 	.hero-motion {
 		animation: none !important;
 		opacity: 1 !important;
 		transform: none !important;
 	}
-	.animate-idf-float {
+	.animate-idf-float,
+	.idf-hero-aurora,
+	.idf-hero-orb {
 		animation: none !important;
 	}
 }
