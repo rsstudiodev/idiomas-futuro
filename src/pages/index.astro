@@ -59,9 +59,9 @@ const extras = [
 ];
 
 const startDates = [
-	{ title: "Inglés A1 · Lu-Mi 19:00", date: "Inicia 3 de septiembre", seats: "6 lugares", highlight: true },
-	{ title: "Portugués A2 · Sáb 10:00", date: "Inicia 12 de septiembre", seats: "4 lugares", highlight: false },
-	{ title: "Chino HSK 1 · Ma-Ju 18:00", date: "Inicia 22 de septiembre", seats: "8 lugares", highlight: false },
+	{ course: "Inglés A1", schedule: "Lu-Mi · 19:00", start: "3 de septiembre", seats: 6, highlight: true },
+	{ course: "Portugués A2", schedule: "Sáb · 10:00", start: "12 de septiembre", seats: 4, highlight: false },
+	{ course: "Chino HSK 1", schedule: "Ma-Ju · 18:00", start: "22 de septiembre", seats: 8, highlight: false },
 ];
 
 const facilities = [
@@ -138,26 +138,23 @@ const methodRows = [
 
 <Layout title="Idiomas del Futuro — Escuela de idiomas">
 	<div class="w-full overflow-x-hidden bg-idf-cream pb-24 text-idf-ink">
-		<section class="relative flex w-full flex-col items-center overflow-hidden rounded-b-[40px] bg-idf-navy px-6 pt-[128px] pb-[76px] max-[900px]:pt-[88px] max-[900px]:pb-[72px]">
-			<!-- Fondo -->
-			<div class="absolute inset-0 bg-[radial-gradient(130%_110%_at_18%_-15%,#1b5c33_0%,#10391f_42%,#0a2415_72%,#061309_100%)]"></div>
-			<div class="idf-hero-rule absolute inset-0 opacity-[0.12]"></div>
+		<section class="relative w-full overflow-hidden rounded-b-[40px] bg-idf-navy">
+			<!-- Fotografía: un salón real, no un gradiente -->
+			<img
+				src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=2000&q=80"
+				alt="Grupo de alumnos en clase alrededor de una mesa"
+				class="absolute inset-0 h-full w-full object-cover object-[62%_30%]"
+				fetchpriority="high"
+				decoding="async"
+			/>
+			<div class="absolute inset-0 bg-[linear-gradient(96deg,rgba(6,19,9,0.93)_0%,rgba(6,19,9,0.84)_30%,rgba(6,19,9,0.54)_58%,rgba(6,19,9,0.3)_100%)]"></div>
+			<div class="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_18%,rgba(6,19,9,0.62)_46%,rgba(6,19,9,0.82)_74%,rgba(6,19,9,0.9)_100%)]"></div>
+			<div class="idf-hero-rule absolute inset-0 opacity-[0.1]"></div>
 
-			<div class="pointer-events-none fixed inset-0 z-50 flex items-center justify-center" aria-hidden="true">
-				<div
-					id="hero-logo-fly"
-					class="hero-motion relative flex h-[40vmin] w-[40vmin] items-center justify-center rounded-[28%] bg-idf-lime opacity-0 md:h-[30vmin] md:w-[30vmin] [animation:idf-hero-logo-intro_0.75s_ease-in-out_forwards]"
-				>
-					<span class="block h-[38%] w-[38%] rounded-full border-4 border-idf-navy"></span>
-					<span class="absolute top-[16%] right-[16%] h-[19%] w-[19%] rotate-45 bg-idf-navy"></span>
-				</div>
-			</div>
-
-			<div class="relative grid w-full max-w-6xl grid-cols-[minmax(0,1.05fr)_minmax(0,0.85fr)] items-center gap-16 max-[980px]:grid-cols-1 max-[980px]:gap-12 max-[980px]:justify-items-start">
-				<!-- Columna de texto -->
-				<div class="flex flex-col items-start gap-7 max-[980px]:items-start">
-					<div class="hero-motion flex items-center gap-3 opacity-0 [animation:idf-hero-logo-settle_0.4s_ease-out_0.62s_forwards]">
-						<div id="hero-logo-target" class="relative flex h-12 w-12 items-center justify-center rounded-[16px] bg-idf-lime">
+			<div class="relative mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 pt-[108px] pb-14 max-[900px]:gap-9 max-[900px]:pt-[88px]">
+				<div class="flex max-w-[52ch] flex-col items-start gap-5">
+					<div class="flex items-center gap-3">
+						<div class="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-[16px] bg-idf-lime">
 							<span class="block h-5 w-5 rounded-full border-[3px] border-idf-navy"></span>
 							<span class="absolute top-2 right-2 h-2 w-2 rotate-45 bg-idf-navy"></span>
 						</div>
@@ -166,80 +163,82 @@ const methodRows = [
 						</span>
 					</div>
 
-					<p class="hero-motion idf-hero-langs m-0 flex flex-wrap items-baseline gap-x-4 gap-y-1 text-[clamp(26px,3.1vw,40px)] leading-[1.1] text-white/35 opacity-0 [animation:idf-hero-reveal_0.5s_ease-out_0.68s_forwards] max-[980px]:justify-start">
+					<p class="idf-hero-langs m-0 flex flex-wrap items-baseline gap-x-4 gap-y-1 text-[clamp(24px,2.6vw,34px)] leading-[1.1] text-white/40">
 						<span lang="en">Hello</span>
-						<span lang="pt" class="text-white/55">Olá</span>
+						<span lang="pt" class="text-white/60">Olá</span>
 						<span lang="zh" class="text-idf-lime">你好</span>
 					</p>
 
-					<h1 class="hero-motion m-0 text-balance font-display text-[clamp(38px,4.7vw,66px)] leading-[0.98] tracking-[-0.035em] text-white opacity-0 [animation:idf-hero-reveal_0.5s_ease-out_0.74s_forwards]">
+					<h1 class="m-0 text-balance font-display text-[clamp(36px,4.2vw,58px)] leading-[1.0] tracking-[-0.035em] text-white">
 						Aprende el idioma que abre tu futuro
 					</h1>
 
-					<p class="hero-motion m-0 max-w-[52ch] text-pretty text-[16px] leading-[1.7] text-white/75 opacity-0 [animation:idf-hero-reveal_0.5s_ease-out_0.8s_forwards]">
+					<p class="m-0 text-pretty text-[16px] leading-[1.7] text-white/75">
 						Inglés, portugués y chino mandarín en grupos de máximo 8 personas. Conversas desde la primera clase, con profesores certificados y horarios que sí caben en tu semana.
 					</p>
 
-					<div class="hero-motion flex flex-wrap items-center gap-3 opacity-0 [animation:idf-hero-reveal_0.5s_ease-out_0.86s_forwards] max-[980px]:justify-start">
-						<a href={waHref} target="_blank" rel="noopener noreferrer" class="rounded-full bg-idf-lime px-7 py-3.5 text-[14px] font-semibold text-idf-navy no-underline shadow-[0_12px_34px_-10px_rgba(168,224,95,0.6)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_44px_-10px_rgba(168,224,95,0.75)]">
+					<div class="flex flex-wrap items-center gap-3">
+						<a href={waHref} target="_blank" rel="noopener noreferrer" class="rounded-full bg-idf-lime px-7 py-3.5 text-[14px] font-semibold text-idf-navy no-underline transition-all duration-300 hover:-translate-y-0.5 hover:bg-idf-lime-deep">
 							Agenda tu clase muestra gratis
 						</a>
-						<a href={`/metodo`} class="rounded-full border border-white/20 px-7 py-3.5 text-[14px] text-white no-underline transition-colors duration-300 hover:border-white/40 hover:bg-white/10">
+						<a href={`/metodo`} class="rounded-full border border-white/25 px-7 py-3.5 text-[14px] text-white no-underline transition-colors duration-300 hover:border-white/50 hover:bg-white/10">
 							Conocer el método
 						</a>
 					</div>
 
-					<ul class="hero-motion m-0 flex list-none flex-wrap gap-x-5 gap-y-2 p-0 text-[15px] text-white/70 opacity-0 [animation:idf-hero-reveal_0.5s_ease-out_0.92s_forwards] max-[980px]:justify-start">
+				</div>
+
+					<ul class="m-0 flex list-none flex-wrap gap-x-5 gap-y-2 p-0 text-[15px] text-white/70">
 						{["Grupos de 8 máximo", "Presencial y en línea", "Desde $1,290 al mes"].map((f, i) => (
 							<li class:list={["flex items-center gap-5", i > 0 && "before:block before:h-1 before:w-1 before:rounded-full before:bg-idf-lime"]}>{f}</li>
 						))}
 					</ul>
-				</div>
 
-				<!-- Columna de tarjetas -->
-				<div class="hero-motion relative w-full max-w-[420px] opacity-0 [animation:idf-hero-reveal_0.55s_ease-out_0.9s_forwards]">
-					<div class="rounded-[26px] border border-white/10 bg-white p-5 shadow-[0_34px_70px_-20px_rgba(0,0,0,0.55)]">
-						<p class="m-0 text-[14px] font-semibold text-idf-navy">Próximos inicios</p>
-						<p class="m-0 mt-0.5 mb-4 text-[12px] text-idf-ink/60">Ciclo septiembre – diciembre 2026</p>
-						<div class="flex flex-col gap-2.5">
-							{startDates.map((s) => (
-								<div class="flex items-center justify-between gap-3 rounded-2xl border border-idf-ink/12 px-3.5 py-3 transition-colors duration-300 hover:border-idf-lime-deep/50">
-									<div class="min-w-0 text-left">
-										<p class="m-0 truncate text-[12px] font-medium text-idf-navy">{s.title}</p>
-										<p class="m-0 truncate text-[11px] text-idf-ink/60">{s.date}</p>
-									</div>
-									<span class:list={["shrink-0 text-[11px] font-medium", s.highlight ? "text-idf-lime-deep" : "text-idf-ink/45"]}>{s.seats}</span>
-								</div>
-							))}
-						</div>
-						<a href={`/calendarios`} class="mt-4 flex min-h-11 items-center justify-center rounded-full bg-idf-navy px-4 py-3 text-[12px] font-medium tracking-[0.06em] text-white no-underline uppercase transition-colors duration-300 hover:bg-idf-blue">
-							Ver calendario
-						</a>
+				<!-- El horario es el producto: tablero de próximos inicios -->
+				<div class="w-full">
+					<div class="flex items-baseline justify-between gap-4 border-b border-white/20 pb-3">
+						<h2 class="m-0 font-display text-[15px] font-medium tracking-[0.02em] text-white">Próximos inicios</h2>
+						<span class="text-[13px] text-white/55">Ciclo septiembre – diciembre 2026</span>
 					</div>
 
+					<div class="grid grid-cols-[1.1fr_1fr_1fr_auto_auto] items-center gap-x-6 border-b border-white/12 py-2.5 text-[11px] font-medium tracking-[0.14em] text-white/45 uppercase max-[820px]:hidden">
+						<span>Curso</span>
+						<span>Días y hora</span>
+						<span>Inicia</span>
+						<span class="text-right">Lugares</span>
+						<span class="sr-only">Acción</span>
+					</div>
 
+					{startDates.map((s) => (
+						<div class="grid grid-cols-[1.1fr_1fr_1fr_auto_auto] items-center gap-x-6 gap-y-1 border-b border-white/12 py-3.5 transition-colors duration-200 hover:bg-white/[0.06] max-[820px]:grid-cols-[1fr_auto] max-[820px]:py-3.5">
+							<span class="font-display text-[19px] tracking-[-0.02em] text-white max-[820px]:text-[17px]">{s.course}</span>
+							<span class="text-[15px] text-white/70 max-[820px]:col-span-2 max-[820px]:text-[14px]">{s.schedule}</span>
+							<span class="text-[15px] text-white/70 max-[820px]:col-span-2 max-[820px]:text-[14px]">Inicia el {s.start}</span>
+							<span
+								class:list={[
+									"justify-self-end text-[14px] font-medium tabular-nums max-[820px]:col-start-2 max-[820px]:row-start-1",
+									s.highlight ? "text-idf-lime" : "text-white/60",
+								]}
+							>
+								{s.seats} lugares libres
+							</span>
+							<a
+								href={waHref}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="ml-6 flex min-h-11 items-center rounded-full border border-white/25 px-5 text-[13px] font-medium whitespace-nowrap text-white no-underline transition-colors duration-200 hover:border-idf-lime hover:bg-idf-lime hover:text-idf-navy max-[820px]:col-span-2 max-[820px]:mt-2 max-[820px]:ml-0 max-[820px]:justify-center"
+							>
+								Apartar lugar
+							</a>
+						</div>
+					))}
+
+					<a href={`/calendarios`} class="mt-5 inline-flex min-h-11 items-center gap-2 text-[14px] font-medium text-idf-lime no-underline transition-colors duration-200 hover:text-white">
+						Ver el calendario completo
+						<span aria-hidden="true">→</span>
+					</a>
 				</div>
 			</div>
-
-			<script is:inline>
-				(function () {
-					var flyer = document.getElementById("hero-logo-fly");
-					var target = document.getElementById("hero-logo-target");
-					if (!flyer || !target) return;
-					if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-						flyer.style.display = "none";
-						return;
-					}
-					var fr = flyer.getBoundingClientRect();
-					var tr = target.getBoundingClientRect();
-					var dx = tr.left + tr.width / 2 - (fr.left + fr.width / 2);
-					var dy = tr.top + tr.height / 2 - (fr.top + fr.height / 2);
-					var scale = tr.width / fr.width;
-					flyer.style.setProperty("--idf-hero-tx", dx + "px");
-					flyer.style.setProperty("--idf-hero-ty", dy + "px");
-					flyer.style.setProperty("--idf-hero-ts", String(scale));
-				})();
-			</script>
 		</section>
 
 		<section class="flex w-full flex-col items-center gap-8 px-6 py-20">
