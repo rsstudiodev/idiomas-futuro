@@ -3,7 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import FloatingDock from "@/components/FloatingDock.astro";
 import SiteFooter from "@/components/SiteFooter.astro";
 import { waHref } from "@/config/whatsapp";
-import { Check, GraduationCap, Languages, Layers, Compass, Landmark, Globe } from "@lucide/astro";
+import { Layers, Compass, Landmark, Globe } from "@lucide/astro";
 const waPromo = waHref;
 const waVisita = waHref;
 
@@ -138,106 +138,86 @@ const methodRows = [
 
 <Layout title="Idiomas del Futuro — Escuela de idiomas">
 	<div class="w-full overflow-x-hidden bg-idf-cream pb-24 text-idf-ink">
-		<section class="relative flex w-full flex-col items-center overflow-hidden rounded-b-[40px] bg-idf-navy px-6 pt-[136px] pb-[96px] max-[900px]:pt-[104px] max-[900px]:pb-[100px]">
-			<!-- Fondo en capas -->
+		<section class="relative flex w-full flex-col items-center overflow-hidden rounded-b-[40px] bg-idf-navy px-6 pt-[128px] pb-[76px] max-[900px]:pt-[88px] max-[900px]:pb-[72px]">
+			<!-- Fondo -->
 			<div class="absolute inset-0 bg-[radial-gradient(130%_110%_at_18%_-15%,#1b5c33_0%,#10391f_42%,#0a2415_72%,#061309_100%)]"></div>
-			<div class="idf-hero-aurora absolute inset-0 opacity-60 mix-blend-screen"></div>
-			<div class="idf-hero-grid absolute inset-0 opacity-[0.16] [mask-image:radial-gradient(80%_70%_at_30%_20%,#000_0%,transparent_75%)]"></div>
-			<div class="idf-stars absolute inset-0 opacity-60 [mask-image:linear-gradient(to_bottom,rgba(0,0,0,.9),transparent_78%)]"></div>
-			<div class="idf-hero-orb pointer-events-none absolute top-[-12%] right-[-6%] size-[46vmax] rounded-full bg-[radial-gradient(circle,rgba(168,224,95,0.22)_0%,rgba(168,224,95,0.06)_45%,transparent_70%)] blur-[10px]"></div>
-			<div class="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-black/25"></div>
+			<div class="idf-hero-rule absolute inset-0 opacity-[0.12]"></div>
 
 			<div class="pointer-events-none fixed inset-0 z-50 flex items-center justify-center" aria-hidden="true">
 				<div
 					id="hero-logo-fly"
-					class="hero-motion relative flex h-[40vmin] w-[40vmin] items-center justify-center rounded-[28%] bg-idf-lime opacity-0 md:h-[30vmin] md:w-[30vmin] [animation:idf-hero-logo-intro_1.4s_ease-in-out_forwards]"
+					class="hero-motion relative flex h-[40vmin] w-[40vmin] items-center justify-center rounded-[28%] bg-idf-lime opacity-0 md:h-[30vmin] md:w-[30vmin] [animation:idf-hero-logo-intro_0.75s_ease-in-out_forwards]"
 				>
 					<span class="block h-[38%] w-[38%] rounded-full border-4 border-idf-navy"></span>
 					<span class="absolute top-[16%] right-[16%] h-[19%] w-[19%] rotate-45 bg-idf-navy"></span>
 				</div>
 			</div>
 
-			<div class="relative grid w-full max-w-6xl grid-cols-[minmax(0,1.05fr)_minmax(0,0.85fr)] items-center gap-16 max-[980px]:grid-cols-1 max-[980px]:gap-12 max-[980px]:text-center max-[980px]:justify-items-center">
+			<div class="relative grid w-full max-w-6xl grid-cols-[minmax(0,1.05fr)_minmax(0,0.85fr)] items-center gap-16 max-[980px]:grid-cols-1 max-[980px]:gap-12 max-[980px]:justify-items-start">
 				<!-- Columna de texto -->
-				<div class="flex flex-col items-start gap-7 max-[980px]:items-center">
-					<div class="hero-motion flex items-center gap-3 opacity-0 [animation:idf-hero-logo-settle_0.5s_ease-out_1.2s_forwards]">
+				<div class="flex flex-col items-start gap-7 max-[980px]:items-start">
+					<div class="hero-motion flex items-center gap-3 opacity-0 [animation:idf-hero-logo-settle_0.4s_ease-out_0.62s_forwards]">
 						<div id="hero-logo-target" class="relative flex h-12 w-12 items-center justify-center rounded-[16px] bg-idf-lime">
 							<span class="block h-5 w-5 rounded-full border-[3px] border-idf-navy"></span>
 							<span class="absolute top-2 right-2 h-2 w-2 rotate-45 bg-idf-navy"></span>
 						</div>
-						<span class="rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-[11px] font-medium tracking-[0.18em] text-idf-lime uppercase backdrop-blur-sm">
-							Guadalajara · desde 2014
+						<span class="text-[13px] font-medium text-white/70">
+							Guadalajara · desde 2014 · <span class="text-idf-lime">1,284 alumnos</span>
 						</span>
 					</div>
 
-					<h1 class="hero-motion m-0 text-balance font-display text-[clamp(38px,4.7vw,66px)] leading-[0.98] tracking-[-0.035em] text-white opacity-0 [animation:idf-hero-reveal_0.7s_ease-out_1.55s_forwards] max-[980px]:text-balance">
-						Aprende el idioma<br />
-						<span class="idf-hero-serif bg-gradient-to-r from-idf-lime via-idf-lime to-white/90 bg-clip-text text-transparent">que abre</span> tu futuro
+					<p class="hero-motion idf-hero-langs m-0 flex flex-wrap items-baseline gap-x-4 gap-y-1 text-[clamp(26px,3.1vw,40px)] leading-[1.1] text-white/35 opacity-0 [animation:idf-hero-reveal_0.5s_ease-out_0.68s_forwards] max-[980px]:justify-start">
+						<span lang="en">Hello</span>
+						<span lang="pt" class="text-white/55">Olá</span>
+						<span lang="zh" class="text-idf-lime">你好</span>
+					</p>
+
+					<h1 class="hero-motion m-0 text-balance font-display text-[clamp(38px,4.7vw,66px)] leading-[0.98] tracking-[-0.035em] text-white opacity-0 [animation:idf-hero-reveal_0.5s_ease-out_0.74s_forwards]">
+						Aprende el idioma que abre tu futuro
 					</h1>
 
-					<p class="hero-motion m-0 max-w-[52ch] text-pretty text-[16px] leading-[1.7] text-white/60 opacity-0 [animation:idf-hero-reveal_0.7s_ease-out_1.68s_forwards]">
+					<p class="hero-motion m-0 max-w-[52ch] text-pretty text-[16px] leading-[1.7] text-white/75 opacity-0 [animation:idf-hero-reveal_0.5s_ease-out_0.8s_forwards]">
 						Inglés, portugués y chino mandarín en grupos de máximo 8 personas. Conversas desde la primera clase, con profesores certificados y horarios que sí caben en tu semana.
 					</p>
 
-					<div class="hero-motion flex flex-wrap items-center gap-3 opacity-0 [animation:idf-hero-reveal_0.7s_ease-out_1.8s_forwards] max-[980px]:justify-center">
+					<div class="hero-motion flex flex-wrap items-center gap-3 opacity-0 [animation:idf-hero-reveal_0.5s_ease-out_0.86s_forwards] max-[980px]:justify-start">
 						<a href={waHref} target="_blank" rel="noopener noreferrer" class="rounded-full bg-idf-lime px-7 py-3.5 text-[14px] font-semibold text-idf-navy no-underline shadow-[0_12px_34px_-10px_rgba(168,224,95,0.6)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_44px_-10px_rgba(168,224,95,0.75)]">
-							Empezar ahora
+							Agenda tu clase muestra gratis
 						</a>
 						<a href={`/metodo`} class="rounded-full border border-white/20 px-7 py-3.5 text-[14px] text-white no-underline transition-colors duration-300 hover:border-white/40 hover:bg-white/10">
 							Conocer el método
 						</a>
 					</div>
 
-					<ul class="hero-motion m-0 flex list-none flex-wrap gap-x-6 gap-y-2 p-0 text-[13px] text-white/50 opacity-0 [animation:idf-hero-reveal_0.7s_ease-out_1.92s_forwards] max-[980px]:justify-center">
-						{["Grupos de 8 máximo", "Clase muestra sin costo", "Presencial y en línea"].map((f) => (
-							<li class="flex items-center gap-2">
-								<Check class="size-4 shrink-0 text-idf-lime" stroke-width={2.4} />
-								{f}
-							</li>
+					<ul class="hero-motion m-0 flex list-none flex-wrap gap-x-5 gap-y-2 p-0 text-[15px] text-white/70 opacity-0 [animation:idf-hero-reveal_0.5s_ease-out_0.92s_forwards] max-[980px]:justify-start">
+						{["Grupos de 8 máximo", "Presencial y en línea", "Desde $1,290 al mes"].map((f, i) => (
+							<li class:list={["flex items-center gap-5", i > 0 && "before:block before:h-1 before:w-1 before:rounded-full before:bg-idf-lime"]}>{f}</li>
 						))}
 					</ul>
 				</div>
 
 				<!-- Columna de tarjetas -->
-				<div class="hero-motion relative w-full max-w-[420px] opacity-0 [animation:idf-hero-reveal_0.8s_ease-out_2s_forwards]">
+				<div class="hero-motion relative w-full max-w-[420px] opacity-0 [animation:idf-hero-reveal_0.55s_ease-out_0.9s_forwards]">
 					<div class="rounded-[26px] border border-white/10 bg-white p-5 shadow-[0_34px_70px_-20px_rgba(0,0,0,0.55)]">
 						<p class="m-0 text-[14px] font-semibold text-idf-navy">Próximos inicios</p>
-						<p class="m-0 mt-0.5 mb-4 text-[11px] text-idf-ink/50">Ciclo septiembre – diciembre 2026</p>
+						<p class="m-0 mt-0.5 mb-4 text-[12px] text-idf-ink/60">Ciclo septiembre – diciembre 2026</p>
 						<div class="flex flex-col gap-2.5">
 							{startDates.map((s) => (
-								<div class="flex items-center justify-between gap-3 rounded-2xl border border-idf-ink/8 px-3.5 py-3 transition-colors duration-300 hover:border-idf-lime-deep/50">
+								<div class="flex items-center justify-between gap-3 rounded-2xl border border-idf-ink/12 px-3.5 py-3 transition-colors duration-300 hover:border-idf-lime-deep/50">
 									<div class="min-w-0 text-left">
 										<p class="m-0 truncate text-[12px] font-medium text-idf-navy">{s.title}</p>
-										<p class="m-0 truncate text-[10px] text-idf-ink/50">{s.date}</p>
+										<p class="m-0 truncate text-[11px] text-idf-ink/60">{s.date}</p>
 									</div>
 									<span class:list={["shrink-0 text-[11px] font-medium", s.highlight ? "text-idf-lime-deep" : "text-idf-ink/45"]}>{s.seats}</span>
 								</div>
 							))}
 						</div>
-						<a href={`/calendarios`} class="mt-4 flex items-center justify-center rounded-full bg-idf-navy px-4 py-3 text-[12px] font-medium tracking-[0.06em] text-white no-underline uppercase transition-colors duration-300 hover:bg-idf-blue">
+						<a href={`/calendarios`} class="mt-4 flex min-h-11 items-center justify-center rounded-full bg-idf-navy px-4 py-3 text-[12px] font-medium tracking-[0.06em] text-white no-underline uppercase transition-colors duration-300 hover:bg-idf-blue">
 							Ver calendario
 						</a>
 					</div>
 
-					<div class="animate-idf-float absolute -top-14 -left-12 flex items-center gap-3 rounded-[18px] bg-white/95 p-3.5 shadow-[0_18px_40px_rgba(0,0,0,0.28)] backdrop-blur max-[980px]:hidden" aria-hidden="true">
-						<span class="flex size-9 shrink-0 items-center justify-center rounded-full bg-idf-lime/30">
-							<GraduationCap class="size-4.5 text-idf-navy" stroke-width={1.9} />
-						</span>
-						<div class="text-left">
-							<p class="m-0 text-[10px] tracking-wide text-idf-ink/50 uppercase">Alumnos activos</p>
-							<p class="m-0 text-[17px] font-semibold text-idf-navy">1,284</p>
-						</div>
-					</div>
 
-					<div class="animate-idf-float absolute -right-10 -bottom-10 flex items-center gap-3 rounded-[18px] bg-white/95 p-3.5 shadow-[0_18px_40px_rgba(0,0,0,0.28)] backdrop-blur [animation-delay:1.4s] max-[980px]:hidden" aria-hidden="true">
-						<span class="flex size-9 shrink-0 items-center justify-center rounded-full bg-idf-lime/30">
-							<Languages class="size-4.5 text-idf-navy" stroke-width={1.9} />
-						</span>
-						<div class="text-left">
-							<p class="m-0 text-[10px] tracking-wide text-idf-ink/50 uppercase">Idiomas</p>
-							<p class="m-0 text-[17px] font-semibold text-idf-navy">EN · PT · 中文</p>
-						</div>
-					</div>
 				</div>
 			</div>
 

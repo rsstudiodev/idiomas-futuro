@@ -117,66 +117,18 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
-/* Starfield noise used on the dark hero */
-.idf-stars {
-	background-image: radial-gradient(1.4px 1.4px at 12% 22%, rgba(255, 255, 255, 0.55), transparent 60%),
-		radial-gradient(1.2px 1.2px at 68% 14%, rgba(255, 255, 255, 0.4), transparent 60%),
-		radial-gradient(1.6px 1.6px at 32% 62%, rgba(255, 255, 255, 0.35), transparent 60%),
-		radial-gradient(1.1px 1.1px at 84% 48%, rgba(255, 255, 255, 0.45), transparent 60%),
-		radial-gradient(1.3px 1.3px at 52% 34%, rgba(255, 255, 255, 0.3), transparent 60%),
-		radial-gradient(1px 1px at 22% 78%, rgba(255, 255, 255, 0.3), transparent 60%),
-		radial-gradient(1.5px 1.5px at 76% 82%, rgba(255, 255, 255, 0.28), transparent 60%),
-		radial-gradient(1.2px 1.2px at 44% 8%, rgba(255, 255, 255, 0.4), transparent 60%),
-		radial-gradient(1px 1px at 92% 26%, rgba(255, 255, 255, 0.32), transparent 60%),
-		radial-gradient(1.4px 1.4px at 6% 52%, rgba(255, 255, 255, 0.3), transparent 60%);
-	background-size: 620px 620px, 480px 480px, 540px 540px, 700px 700px, 520px 520px, 660px 660px, 580px 580px, 500px 500px, 640px 640px, 560px 560px;
+/* Hero: ruled-paper hairlines, a notebook rather than a starfield */
+.idf-hero-rule {
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 1px, transparent 1px);
+	background-size: 100% 34px;
+	mask-image: linear-gradient(to bottom, transparent, #000 22%, #000 62%, transparent 96%);
 }
 
-/* Hero: serif accent for the headline */
-.idf-hero-serif {
-	font-family: "Instrument Serif", ui-serif, Georgia, serif;
-	font-style: italic;
-	font-weight: 400;
+/* Hero: the three writing systems the school teaches */
+.idf-hero-langs {
+	font-family: "Noto Sans SC", "Inter", ui-sans-serif, system-ui, sans-serif;
+	font-weight: 300;
 	letter-spacing: -0.01em;
-}
-
-/* Hero: slow aurora wash behind the copy */
-.idf-hero-aurora {
-	background-image: radial-gradient(52% 44% at 22% 18%, rgba(168, 224, 95, 0.2), transparent 68%),
-		radial-gradient(46% 40% at 78% 12%, rgba(64, 176, 118, 0.22), transparent 70%),
-		radial-gradient(60% 46% at 60% 88%, rgba(29, 107, 58, 0.28), transparent 72%);
-	animation: idf-hero-aurora 22s ease-in-out infinite alternate;
-}
-
-/* Hero: faint measuring grid */
-.idf-hero-grid {
-	background-image: linear-gradient(to right, rgba(255, 255, 255, 0.14) 1px, transparent 1px),
-		linear-gradient(to bottom, rgba(255, 255, 255, 0.14) 1px, transparent 1px);
-	background-size: 62px 62px;
-}
-
-.idf-hero-orb {
-	animation: idf-hero-orb 16s ease-in-out infinite alternate;
-}
-
-@keyframes idf-hero-aurora {
-	from {
-		transform: translate3d(-2%, -1%, 0) scale(1);
-	}
-	to {
-		transform: translate3d(3%, 2%, 0) scale(1.08);
-	}
-}
-
-@keyframes idf-hero-orb {
-	from {
-		transform: translate3d(0, 0, 0) scale(1);
-		opacity: 0.75;
-	}
-	to {
-		transform: translate3d(-3%, 4%, 0) scale(1.12);
-		opacity: 1;
-	}
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -185,9 +137,7 @@ body {
 		opacity: 1 !important;
 		transform: none !important;
 	}
-	.animate-idf-float,
-	.idf-hero-aurora,
-	.idf-hero-orb {
+	.animate-idf-float {
 		animation: none !important;
 	}
 }
