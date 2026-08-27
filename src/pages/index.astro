@@ -151,8 +151,8 @@ const methodRows = [
 			<div class="absolute inset-0 hidden max-[900px]:block bg-[linear-gradient(to_bottom,rgba(6,19,9,0.12)_0%,rgba(6,19,9,0.2)_15%,rgba(6,19,9,0.72)_29%,rgba(6,19,9,0.9)_55%,rgba(6,19,9,0.95)_100%)]"></div>
 			<div class="absolute inset-0 max-[900px]:hidden bg-[linear-gradient(to_bottom,transparent_6%,rgba(6,19,9,0.42)_38%,rgba(6,19,9,0.76)_66%,rgba(6,19,9,0.88)_100%)]"></div>
 
-			<div class="relative mx-auto flex w-full max-w-6xl flex-col gap-16 px-6 pt-[136px] pb-20 max-[900px]:gap-12 max-[900px]:pt-[210px] max-[900px]:pb-16">
-				<div class="flex max-w-[52ch] flex-col items-start gap-7">
+			<div class="relative mx-auto flex w-full max-w-6xl flex-col gap-16 px-6 pt-[136px] pb-20 max-[900px]:gap-14 max-[900px]:pt-[210px] max-[900px]:pb-20">
+				<div class="flex max-w-[52ch] flex-col items-start gap-7 max-[900px]:gap-8">
 					<div class="flex items-center gap-3">
 						<div class="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-[16px] bg-idf-lime">
 							<span class="block h-5 w-5 rounded-full border-[3px] border-idf-navy"></span>
@@ -188,7 +188,7 @@ const methodRows = [
 
 				</div>
 
-					<ul class="m-0 flex list-none flex-wrap gap-x-6 gap-y-2.5 p-0 text-[15px] text-white/70">
+					<ul class="m-0 flex list-none flex-wrap gap-x-6 gap-y-3 p-0 text-[15px] text-white/70">
 						{["Grupos de 8 máximo", "Presencial y en línea", "Desde $1,290 al mes"].map((f, i) => (
 							<li class:list={["flex items-center gap-5", i > 0 && "before:block before:h-1 before:w-1 before:rounded-full before:bg-idf-lime"]}>{f}</li>
 						))}
@@ -196,7 +196,7 @@ const methodRows = [
 
 				<!-- El horario es el producto: tablero de próximos inicios -->
 				<div class="w-full">
-					<div class="flex items-baseline justify-between gap-4 border-b border-white/20 pb-4">
+					<div class="flex items-baseline justify-between gap-4 border-b border-white/20 pb-4 max-[820px]:pb-5">
 						<h2 class="m-0 font-display text-[15px] font-medium tracking-[0.02em] text-white">Próximos inicios</h2>
 						<span class="text-[13px] text-white/55">Ciclo septiembre – diciembre 2026</span>
 					</div>
@@ -226,14 +226,14 @@ const methodRows = [
 								href={waHref}
 								target="_blank"
 								rel="noopener noreferrer"
-								class="ml-6 flex min-h-11 items-center rounded-full border border-white/25 px-5 text-[13px] font-medium whitespace-nowrap text-white no-underline transition-colors duration-200 hover:border-idf-lime hover:bg-idf-lime hover:text-idf-navy max-[820px]:col-span-2 max-[820px]:mt-2 max-[820px]:ml-0 max-[820px]:justify-center"
+								class="ml-6 flex min-h-11 items-center rounded-full border border-white/25 px-5 text-[13px] font-medium whitespace-nowrap text-white no-underline transition-colors duration-200 hover:border-idf-lime hover:bg-idf-lime hover:text-idf-navy max-[820px]:col-span-2 max-[820px]:mt-4 max-[820px]:ml-0 max-[820px]:justify-center"
 							>
 								Apartar lugar
 							</a>
 						</div>
 					))}
 
-					<a href={`/calendarios`} class="mt-7 inline-flex min-h-11 items-center gap-2 text-[14px] font-medium text-idf-lime no-underline transition-colors duration-200 hover:text-white">
+					<a href={`/calendarios`} class="mt-7 inline-flex max-[820px]:mt-8 min-h-11 items-center gap-2 text-[14px] font-medium text-idf-lime no-underline transition-colors duration-200 hover:text-white">
 						Ver el calendario completo
 						<span aria-hidden="true">→</span>
 					</a>
