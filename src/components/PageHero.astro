@@ -1,0 +1,58 @@
+---
+interface Props {
+	kicker: string;
+	title: string;
+	description: string;
+	image: string;
+	imageAlt: string;
+	/** object-position for the photograph, desktop and below 900px */
+	focus?: string;
+	focusMobile?: string;
+}
+
+const { kicker, title, description, image, imageAlt, focus = "62% 30%", focusMobile = "72% 12%" } = Astro.props;
+---
+
+<section class="relative w-full overflow-hidden rounded-b-[40px] bg-idf-navy">
+	<img
+		src={image}
+		alt={imageAlt}
+		class="idf-page-hero-img absolute inset-0 h-full w-full object-cover"
+		style={`--focus:${focus};--focus-mobile:${focusMobile}`}
+		fetchpriority="high"
+		decoding="async"
+	/>
+	<div class="absolute inset-0 max-[900px]:hidden bg-[linear-gradient(96deg,rgba(6,19,9,0.92)_0%,rgba(6,19,9,0.8)_32%,rgba(6,19,9,0.5)_64%,rgba(6,19,9,0.3)_100%)]"></div>
+	<div class="absolute inset-0 hidden max-[900px]:block bg-[linear-gradient(to_bottom,rgba(6,19,9,0.12)_0%,rgba(6,19,9,0.2)_15%,rgba(6,19,9,0.72)_29%,rgba(6,19,9,0.9)_55%,rgba(6,19,9,0.95)_100%)]"></div>
+	<div class="absolute inset-0 max-[900px]:hidden bg-[linear-gradient(to_bottom,transparent_6%,rgba(6,19,9,0.42)_38%,rgba(6,19,9,0.76)_66%,rgba(6,19,9,0.88)_100%)]"></div>
+
+	<div class="relative mx-auto flex w-full max-w-6xl flex-col gap-7 px-6 pt-[136px] pb-24 max-[900px]:gap-8 max-[900px]:pt-[210px] max-[900px]:pb-20">
+		<div class="flex items-center gap-3">
+			<div class="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-[16px] bg-idf-lime">
+				<span class="block h-5 w-5 rounded-full border-[3px] border-idf-navy"></span>
+				<span class="absolute top-2 right-2 h-2 w-2 rotate-45 bg-idf-navy"></span>
+			</div>
+			<span class="text-[13px] font-medium text-white/70">{kicker}</span>
+		</div>
+
+		<h1 class="m-0 max-w-[22ch] text-balance font-display text-[clamp(36px,4.2vw,58px)] leading-[1.0] tracking-[-0.035em] text-white">
+			{title}
+		</h1>
+
+		<p class="m-0 max-w-[52ch] text-pretty text-[16px] leading-[1.7] text-white/75">{description}</p>
+
+		<slot />
+	</div>
+</section>
+
+<style>
+	.idf-page-hero-img {
+		object-position: var(--focus);
+	}
+
+	@media (max-width: 900px) {
+		.idf-page-hero-img {
+			object-position: var(--focus-mobile);
+		}
+	}
+</style>
